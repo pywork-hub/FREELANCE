@@ -1,0 +1,25 @@
+query Analytics($query: AnalyticsQueryInput!) {
+	analytics(query: $query) {
+		onlineUsersCount
+		offlineUsersCount
+		topPurchasers {
+			login
+			avatarPath
+			ordersCount
+			ordersAmount
+		}
+		popularServices {
+			id
+			name
+			coverPath
+			categories
+			orderTimes
+		}
+		inProcessOrdersCount
+		completedOrdersCount
+		canceledOrdersCount
+		expiredOrdersCount
+		refundedOrdersCount
+		totalEarned
+	}
+}

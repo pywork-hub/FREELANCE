@@ -1,0 +1,5 @@
+mutation SendRequest($data: RequestInput!) {
+	sendRequest(data: $data) {
+		id
+	}
+}

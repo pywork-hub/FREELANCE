@@ -1,0 +1,31 @@
+query CurrentRoom($partnerLogin: String!, $query: QueryInput!) {
+	currentRoom(partnerLogin: $partnerLogin, query: $query) {
+		id
+		partner {
+			id
+			profile {
+				login
+				avatarPath
+			}
+			activity {
+				status
+				lastSeen
+			}
+		}
+		messages {
+			id
+			sender {
+				profile {
+					login
+					avatarPath
+				}
+			}
+			content
+			isChecked
+			type
+			status
+			updatedAt
+			createdAt
+		}
+	}
+}

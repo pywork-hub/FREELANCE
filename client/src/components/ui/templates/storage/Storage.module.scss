@@ -1,0 +1,6 @@
+.storage {
+	@apply fixed z-5 top-0 bottom-0 left-0 right-0 h-screen w-screen animate-fade flex flex-col;
+}
+.fill {
+	@apply h-full flex items-stretch overflow-hidden;
+}

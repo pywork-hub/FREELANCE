@@ -1,0 +1,6 @@
+.field {
+	@apply flex flex-col items-start gap-1;
+}
+.textarea {
+	@apply w-full resize-none bg-transparent;
+}

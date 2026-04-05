@@ -1,0 +1,16 @@
+.footer {
+	@apply bg-gray-900 text-white;
+}
+.soon {
+	@apply leading-2lg;
+
+	> h3 {
+		@apply text-green-400 mb-1;
+	}
+}
+
+@media (max-width: 550px) {
+	.soon {
+		@apply text-medium-md;
+	}
+}

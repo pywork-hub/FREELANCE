@@ -1,0 +1,11 @@
+.wrapper {
+	@apply pt-5;
+}
+
+@media (max-width: 550px) {
+	.logo {
+		> img {
+			max-width: 110px;
+		}
+	}
+}

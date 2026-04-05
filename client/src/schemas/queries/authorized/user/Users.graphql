@@ -1,0 +1,14 @@
+query Users($query: QueryInput!) {
+	users(query: $query) {
+		users {
+			id
+			profile {
+				avatarPath
+				email
+				login
+			}
+			roles
+		}
+		count
+	}
+}

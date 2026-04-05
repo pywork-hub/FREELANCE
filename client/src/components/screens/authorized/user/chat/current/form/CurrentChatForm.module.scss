@@ -1,0 +1,76 @@
+.wrapper {
+	@apply py-2 border-t border-t-gray-300 px-4;
+}
+.form {
+	@apply flex items-end justify-between gap-2;
+}
+.field {
+	@apply min-h-12 w-full;
+
+	> textarea {
+		@apply h-full font-nunito text-medium-md text-gray-base py-3.5 px-4 overflow-hidden leading-2lg bg-gray-150 rounded-md border border-gray-300;
+		max-height: 205px;
+
+		&::placeholder {
+			@apply text-gray-base;
+		}
+	}
+}
+.send {
+	@apply min-w-12 min-h-12 max-w-12 max-h-12 rounded-full btn-green aspect-square flex items-center justify-center;
+
+	> svg {
+		@apply text-white w-5 h-5;
+	}
+}
+.typing {
+	@apply flex items-center gap-1 font-nunito text-medium-md mb-2 animate-fade;
+}
+
+@media (max-width: 1200px) {
+	.field {
+		@apply min-h-11;
+
+		> textarea {
+			@apply py-3;
+		}
+	}
+	.send {
+		@apply min-h-11 min-w-11 max-w-11 max-h-11;
+
+		> svg {
+			@apply text-white w-5 h-5;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.field {
+		> textarea {
+			max-height: 30vh;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.field {
+		@apply min-h-10;
+
+		> textarea {
+			@apply py-2.5 leading-3lg text-medium-sm;
+		}
+	}
+	.send {
+		@apply min-w-10 min-h-10 max-w-10 max-h-10;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.wrapper {
+		@apply px-3;
+	}
+}

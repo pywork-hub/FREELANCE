@@ -1,0 +1,8 @@
+query ServicesSelect($query: ServiceQueryInput!) {
+	services(query: $query) {
+		services {
+			id
+			name
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.section {
+	@apply py-14;
+}
+.stat {
+	max-width: 25%;
+}
+
+@media (max-width: 1000px) {
+	.stat {
+		max-width: calc(100% / 3);
+
+		&:first-child {
+			@apply max-w-full;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-10;
+	}
+	.stat {
+		max-width: 50%;
+
+		&:first-child {
+			max-width: 50%;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply py-8;
+	}
+}
+	

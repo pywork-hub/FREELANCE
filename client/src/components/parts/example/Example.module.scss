@@ -1,0 +1,192 @@
+.example {
+	@apply relative w-full rounded-sm black-shadow;
+	aspect-ratio: 4 / 2.5;
+
+	> img {
+		@apply rounded-sm image-like-bg-cover absolute;
+	}
+
+	&:hover {
+		.fill {
+			@apply opacity-100;
+		}
+		.buttons {
+			@apply opacity-100 pointer-events-auto visible;
+		}
+	}
+}
+.fill {
+	@apply w-full h-full rounded-sm relative black-bottom-gradient transition-opacity opacity-0;
+}
+.name {
+	@apply absolute bottom-3 left-4 right-4 font-medium text-white text-medium leading-md;
+	max-width: 200px;
+}
+.buttons {
+	@apply absolute z-1 top-3 right-3 flex gap-2 opacity-0 invisible pointer-events-none transition-all;
+}
+.view,
+.link,
+.question {
+	@apply bg-white p-2 rounded-full black-shadow flex items-center justify-center up-hover;
+
+	> svg {
+		@apply w-4 h-4;
+	}
+}
+.head {
+	@apply flex items-center justify-between gap-10 pb-3 border-b border-gray-300 mt-3;
+}
+.content {
+	@apply pt-3;
+}
+.info {
+	@apply flex items-center gap-5 justify-between mb-2;
+}
+.label {
+	@apply font-medium text-medium;
+}
+.rating {
+	@apply flex items-center gap-2 text-yellow-400;
+
+	> svg {
+		@apply w-5 h-5 fill-yellow-400;
+	}
+
+	> span {
+		@apply font-medium;
+	}
+}
+.customer {
+	@apply flex items-center gap-3;
+
+	> img {
+		@apply image-like-bg-cover rounded-full;
+		min-width: 37px;
+		min-height: 37px;
+		max-width: 37px;
+		max-height: 37px;
+	}
+}
+.project {
+	@apply mt-5 text-green-base font-medium green-underline-active;
+}
+.comment {
+	@apply leading-3lg;
+
+	a {
+		@apply text-green-400;
+	}
+}
+
+@media (max-width: 1024px) {
+	.example {
+		.fill {
+			@apply opacity-100;
+		}
+		.buttons {
+			@apply opacity-100 pointer-events-auto visible;
+		}
+	}
+}
+
+@media(max-width: 1000px) {
+	.project {
+		@apply mt-4;
+	}
+	.label {
+		@apply text-base;
+	}
+	.review {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 900px) {
+	.name {
+		@apply text-base;
+	}
+	.view,
+	.link,
+	.question {
+		> svg {
+			@apply w-3.5 h-3.5;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.name {
+		@apply text-medium;
+	}
+	.view,
+	.link,
+	.question {
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.name {
+		@apply text-base;
+	}
+	.view,
+	.link,
+	.question {
+		> svg {
+			@apply w-3.5 h-3.5;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	.name {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 400px) {
+	.head {
+		@apply mt-2.5;
+	}
+	.project {
+		@apply mt-3;
+	}
+	.info {
+		@apply mb-1.5;
+	}
+	.created {
+		@apply text-medium-sm;
+	}
+	.rating {
+		@apply gap-1.5;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.customer {
+		@apply gap-2;
+	
+		> img {
+			min-width: 34px;
+			min-height: 34px;
+			max-width: 34px;
+			max-height: 34px;
+		}
+	}
+	.view,
+	.link,
+	.question {
+		@apply p-1.5;
+	}
+	.buttons {
+		@apply right-2.5 top-2.5;
+	}
+	.name {
+		@apply bottom-2.5 left-2.5 right-2.5;
+	}
+}

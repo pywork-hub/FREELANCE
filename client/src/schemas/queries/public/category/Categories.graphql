@@ -1,0 +1,12 @@
+query Categories($query: CategoryQueryInput!) {
+	categories(query: $query) {
+		categories {
+			id
+			name
+			slug
+			coverPath
+			visibility
+		}
+		count
+	}
+}

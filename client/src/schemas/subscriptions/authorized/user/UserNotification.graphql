@@ -1,0 +1,24 @@
+subscription UserNotification($userId: Int!) {
+	userNotification(userId: $userId) {
+		id
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		room {
+			users {
+				profile {
+					login
+				}
+			}
+		}
+		status
+		roomId
+		orderId
+		type
+		createdAt
+	}
+}

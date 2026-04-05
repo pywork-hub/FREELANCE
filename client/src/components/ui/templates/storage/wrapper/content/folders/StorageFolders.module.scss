@@ -1,0 +1,24 @@
+.folders {
+	@apply flex items-stretch flex-wrap gap-4;
+}
+.folder {
+	@apply w-full relative border border-solid border-gray-300/20 rounded-sm bg-white;
+	max-width: calc(100% / 8 - 14px);
+
+	&:hover .remove {
+		@apply opacity-100 visible pointer-events-auto;
+	}
+}
+.btn {
+	@apply w-full py-7 px-4 flex flex-col items-center gap-2 font-medium break-all text-medium-md;
+}
+.info {
+	@apply text-small flex flex-col items-center gap-1.5;
+}
+.remove {
+	@apply invisible pointer-events-none opacity-0 absolute right-2 top-2 w-7 h-7 rounded-full flex items-center justify-center transition-all hover:bg-gray-500/20;
+
+	> svg {
+		@apply w-4 h-4;
+	}
+}

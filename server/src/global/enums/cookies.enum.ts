@@ -1,0 +1,4 @@
+export enum EnumCookies {
+	REFRESH_TOKEN = 'KEEYWORK-XLSF',
+	ACCESS_TOKEN = 'KEEYWORK-ACCESS',
+}

@@ -1,0 +1,3 @@
+mutation JwtConfirmation($data: JwtAuthConfirmationInput!) {
+	jwtConfirmation(data: $data)
+}

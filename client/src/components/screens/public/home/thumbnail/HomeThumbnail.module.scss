@@ -1,0 +1,38 @@
+.section {
+	@apply relative;
+	min-height: 375px;
+
+	> img {
+		@apply absolute left-0 top-0 right-0 bottom-0 image-like-bg-cover;
+	}
+}
+
+@media(max-width: 1300px) {
+	.section {
+		min-height: 320px;
+	}
+}
+
+@media(max-width: 1000px) {
+	.section {
+		min-height: 285px;
+	}
+}
+
+@media(max-width: 700px) {
+	.section {
+		min-height: 250px;
+	}
+}
+
+@media(max-width: 500px) {
+	.section {
+		min-height: 220px;
+	}
+}
+
+@media(max-width: 400px) {
+	.section {
+		min-height: 195px;
+	}
+}

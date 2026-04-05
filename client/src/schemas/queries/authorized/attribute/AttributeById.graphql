@@ -1,0 +1,8 @@
+query AttributeById($id: Int!) {
+	attributeById(id: $id) {
+		name
+		properties {
+			name
+		}
+	}
+}

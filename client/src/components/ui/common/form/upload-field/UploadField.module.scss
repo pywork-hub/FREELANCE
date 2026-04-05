@@ -1,0 +1,27 @@
+.upload {
+	@apply w-full;
+}
+.uploadWrapper {
+	@apply flex flex-col items-start;
+}
+.uploadBtn {
+	@apply py-3 px-10 rounded-sm outline-border-none cursor-pointer font-semibold focus:outline-border-none bg-gray-900 text-white;
+}
+.uploadFill {
+	@apply w-full mt-5 relative animate-fade;
+}
+.video {
+	@apply object-cover object-center;
+}
+.value {
+	@apply relative;
+
+	> img,
+	> video {
+		@apply w-auto h-auto rounded-sm;
+		max-width: 300px;
+	}
+}
+.remove {
+	@apply absolute right-0 top-0 z-2;
+}

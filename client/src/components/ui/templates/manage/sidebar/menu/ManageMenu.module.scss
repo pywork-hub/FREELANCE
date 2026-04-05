@@ -1,0 +1,9 @@
+.menu {
+	@apply flex flex-col items-start gap-3 text-white;
+}
+.link {
+	@apply green-underline-hover;
+}
+.current {
+	@apply green-underline-active pointer-events-none;
+}

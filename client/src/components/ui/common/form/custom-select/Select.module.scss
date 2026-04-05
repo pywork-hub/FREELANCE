@@ -1,0 +1,37 @@
+.wrapper {
+	@apply relative z-2;
+}
+.label {
+	@apply text-medium-md;
+}
+.select {
+	@apply w-full text-white;
+}
+.list {
+	@apply absolute top-full animate-fade flex flex-col w-full rounded-b-sm;
+}
+.item {
+	@apply bg-gray-900 transition-colors hover:bg-gray-800;
+
+	&:last-child {
+		@apply rounded-b-sm;
+	}
+}
+.button {
+	@apply w-full py-2 px-4;
+}
+.opener {
+	@apply w-full flex items-center gap-3 justify-between py-2 px-4 bg-gray-900 rounded-sm border border-solid border-gray-500/5 transition-all;
+
+	> svg {
+		@apply h-5 w-5 transition-transform;
+	}
+
+	&.active {
+		@apply rounded-b-none border-b-transparent;
+
+		> svg {
+			@apply rotate-180;
+		}
+	}
+}

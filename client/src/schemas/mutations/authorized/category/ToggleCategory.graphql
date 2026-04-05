@@ -1,0 +1,5 @@
+mutation ToggleCategory($id: Int!) {
+	toggleCategory(id: $id) {
+		id
+	}
+}

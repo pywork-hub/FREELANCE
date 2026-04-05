@@ -1,0 +1,416 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialActions"]
+  binaryTargets   = ["native", "rhel-openssl-1.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Visibility {
+  VISIBLE
+  HIDDEN
+
+  @@map("visibility")
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  USER
+
+  @@map("user_role")
+}
+
+enum ActivityStatus {
+  ONLINE
+  OFFLINE
+
+  @@map("activity_status")
+}
+
+enum MessageStatus {
+  POSTED
+  EDITED
+  DELETED
+
+  @@map("message_status")
+}
+
+enum MessageType {
+  MESSAGE
+  SERVICE
+  OFFER
+  ORDER_IN_PROCESS
+  ORDER_COMPLETED
+  ORDER_CANCELED
+  ORDER_EXPIRED
+  ORDER_REFUNDED
+  REVIEW_OFFERED
+  REVIEW_LEFT
+
+  @@map("message_type")
+}
+
+enum OrderStatus {
+  PENDING
+  IN_PROCESS
+  COMPLETED
+  CANCELED
+  EXPIRED
+  REFUNDED
+
+  @@map("order_status")
+}
+
+enum PageType {
+  HOME
+  MARKET
+
+  @@map("page_type")
+}
+
+model BlockItem {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  heading String?
+  content String
+
+  block   Block @relation(fields: [blockId], references: [id], onDelete: Cascade)
+  blockId Int   @map("block_id")
+
+  @@map("block_item")
+}
+
+model Block {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  heading String?
+  items   BlockItem[]
+
+  type PageType? @unique
+
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId Int?      @unique @map("category_id")
+
+  @@map("block")
+}
+
+model OpenGraphsImage {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  url String
+  alt String
+
+  openGraphs   OpenGraphs @relation(fields: [openGraphsId], references: [id], onDelete: Cascade)
+  openGraphsId Int        @map("open_graphs_id")
+
+  @@map("open_graphs_image")
+}
+
+model OpenGraphs {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  title       String
+  description String
+  images      OpenGraphsImage[]
+
+  seo   Seo @relation(fields: [seoId], references: [id], onDelete: Cascade)
+  seoId Int @unique @map("seo_id")
+
+  @@map("open_graphs")
+}
+
+model Seo {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  title       String
+  description String
+  keywords    String[]
+
+  graphs OpenGraphs?
+
+  type PageType? @unique
+
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId Int?      @unique @map("category_id")
+  service    Service?  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId  Int?      @unique @map("service_id")
+
+  @@map("seo")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  rating  Int
+  comment String
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int      @map("user_id")
+  service   Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId Int      @map("service_id")
+  example   Example? @relation(fields: [exampleId], references: [id])
+  exampleId Int?     @unique @map("example_id")
+
+  @@map("review")
+}
+
+model Order {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  termUpdatedAt DateTime @default(now()) @map("term_updated_at")
+
+  name String
+  slug String
+
+  description String
+
+  term  Int
+  total Int
+
+  status OrderStatus @default(PENDING) @map("order_status")
+
+  users    User[]    @relation("order_user_relation")
+  messages Message[]
+
+  roomId    Int    @map("room_id")
+  paymentId String @unique @map("payment_id")
+  userId    Int    @map("user_id")
+  managerId Int    @map("manager_id")
+
+  @@map("order")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  content String
+
+  type MessageType @default(MESSAGE)
+
+  isChecked Boolean       @default(false)
+  status    MessageStatus @default(POSTED)
+
+  room     Room   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  roomId   Int    @map("room_id")
+  sender   User   @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  senderId Int    @map("sender_id")
+  order    Order? @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId  Int?   @map("order_id")
+
+  @@map("message")
+}
+
+model Room {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  messages Message[]
+  users    User[]    @relation("room_user_relation")
+
+  @@map("room")
+}
+
+model Attribute {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name       String     @unique
+  slug       String     @unique
+  properties Property[]
+
+  @@map("attribute")
+}
+
+model Property {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name String
+  slug String
+
+  services Service[] @relation("service_property_relation")
+
+  attribute   Attribute @relation(fields: [attributeId], references: [id], onDelete: Cascade)
+  attributeId Int       @map("attribute_id")
+
+  @@map("property")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name      String @unique
+  slug      String @unique
+  coverPath String @map("cover_path")
+
+  childrens Category[] @relation("categories_relation")
+  parents   Category[] @relation("categories_relation")
+  services  Service[]  @relation("service_category_relation")
+  block     Block?
+  seo       Seo?
+
+  visibility Visibility @default(HIDDEN)
+
+  @@map("category")
+}
+
+model Example {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name String @unique
+  slug String @unique
+
+  coverPath String  @map("cover_path")
+  imagePath String  @map("image_path")
+  url       String?
+
+  user    User?    @relation(fields: [userId], references: [id])
+  service Service? @relation(fields: [serviceId], references: [id])
+  review  Review?
+
+  visibility Visibility @default(HIDDEN)
+
+  userId    Int? @map("user_id")
+  serviceId Int? @map("service_id")
+
+  @@map("example")
+}
+
+model Service {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name String @unique
+  slug String @unique
+
+  fromPrice     Int  @map("from_price")
+  fromSalePrice Int? @map("from_sale_price")
+  fromTerm      Int  @map("from_term")
+
+  excerpt     String
+  description String
+  coverPath   String @map("cover_path")
+  videoPath   String  @map("video_path")
+
+  examples      Example[]
+  categories    Category[] @relation("service_category_relation")
+  favoriteUsers User[]     @relation("favorite_relation")
+  properties    Property[] @relation("service_property_relation")
+  reviews       Review[]
+  seo           Seo?
+
+  orderTimes    Int   @default(0) @map("order_times")
+  averageRating Float @default(0.00) @map("average_rating")
+
+  visibility Visibility @default(HIDDEN)
+
+  @@map("service")
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  email    String @unique
+  login    String @unique
+  password String
+
+  avatarPath String @default("/uploads/constants/user/default-avatar.png") @map("avatar_path")
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int  @unique @map("user_id")
+
+  @@map("profile")
+}
+
+model Activity {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  status   ActivityStatus @default(ONLINE)
+  lastSeen DateTime       @default(now()) @map("last_seen")
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int  @unique @map("user_id")
+
+  @@map("activity")
+}
+
+model TelegramBot {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  chatId String @map("chat_id")
+  token  String
+
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int  @map("user_id")
+
+  @@map("telegram_bot")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  profile  Profile?
+  orders   Order[]   @relation("order_user_relation")
+  rooms    Room[]    @relation("room_user_relation")
+  messages Message[]
+
+  favorites Service[]     @relation("favorite_relation")
+  bots      TelegramBot[]
+  reviews   Review[]
+  examples  Example[]
+
+  activity Activity?
+
+  roles UserRole[] @default([USER])
+
+  @@map("user")
+}
+
+model Request {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  firstName String @map("first_name")
+  lastName  String @map("last_name")
+
+  email   String
+  message String
+
+  @@map("request")
+}

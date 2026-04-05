@@ -1,0 +1,146 @@
+.section {
+	@apply py-14 bg-gray-900/10 flex-1;
+}
+.heading {
+	@apply mb-6;
+}
+.notFound {
+	@apply text-medium-lg;
+}
+.inner {
+	@apply flex flex-col gap-5;
+}
+.filters {
+	@apply flex gap-8 border-b border-gray-300 pb-4 overflow-y-hidden overflow-x-auto;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply h-0.5 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply h-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply h-full bg-green-base rounded-lg;
+	}
+}
+.filterBtn {
+	@apply green-hover whitespace-nowrap;
+
+	&.picked {
+		@apply green-underline-active text-green-base;
+	}
+}
+.fill {
+	@apply bg-white rounded-sm border border-gray-300 overflow-y-auto overflow-x-hidden;
+	max-height: 90vh;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}
+.orders {
+	@apply flex flex-col;
+}
+.labels {
+	@apply flex items-center gap-5 px-7 py-3.5;
+}
+.label {
+	@apply text-medium-md;
+}
+.orderStatus,
+.price {
+	@apply text-center;
+}
+.name,
+.partner {
+	width: 21%;
+}
+.term,
+.created {
+	@apply text-right;
+	width: 12%;
+}
+.price {
+	width: 10%;
+}
+.number,
+.orderStatus {
+	width: 15%;
+}
+
+@media (max-width: 1150px) {
+	.fill {
+		@apply bg-transparent border-none;
+	}
+	.orders {
+		@apply gap-4 flex-row flex-wrap;
+	}
+	.labels {
+		@apply hidden;
+	}
+}
+
+@media (max-width: 1000px) {
+	.heading {
+		@apply mb-6;
+	}
+	.notFound {
+		@apply text-medium;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-10;
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply py-8;
+	}
+	.heading {
+		@apply mb-5;
+	}
+	.inner {
+		@apply gap-4;
+	}
+	.filters {
+		@apply gap-6 pb-3;
+	}
+	.filterBtn {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 460px) {
+	.filters {
+		@apply border-none pb-5;
+	}
+}
+
+@media (max-width: 400px) {
+	.heading {
+		@apply mb-4;
+	}
+	.filters {
+		@apply gap-4;
+	}
+	.notFound {
+		@apply text-base;
+	}
+}

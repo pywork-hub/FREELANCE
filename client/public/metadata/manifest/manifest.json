@@ -1,0 +1,11 @@
+{
+	"name": "Keeywork",
+	"short_name": "KW",
+	"description": "Продажа IT услуг для вашего бизнеса.",
+	"lang": "ru-RU",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#313337",
+	"orientation": "portrait"
+}

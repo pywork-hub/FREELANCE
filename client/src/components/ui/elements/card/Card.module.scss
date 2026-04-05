@@ -1,0 +1,17 @@
+.card {
+	@apply rounded-sm px-4 py-5;
+}
+.label {
+	@apply text-medium-md text-gray-400;
+}
+.bottom {
+	@apply mt-3.5 flex items-center justify-between gap-5;
+
+	> svg {
+		@apply w-6 h-6 text-yellow-400;
+	}
+}
+.value {
+	@apply text-white font-nunito text-5lg;
+}
+

@@ -1,0 +1,93 @@
+.opener {
+	@apply hidden absolute left-0 green-hover;
+}
+.overlay {
+	@apply hidden w-screen h-screen fixed top-0 bottom-0 left-0 right-0 bg-black/75 justify-center items-center duration-500 invisible opacity-0 z-5 animate-opacity;
+}
+.burger {
+	@apply h-screen max-h-screen fixed top-0 bottom-0 left-0 animate-slideFromLeft bg-gray-900 overflow-y-auto overflow-x-hidden;
+	min-width: 300px;
+	scrollbar-color: #e0e0e0 #f7faf7;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-150 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+}
+.wrapper {
+	@apply h-full flex flex-col gap-6;
+}
+.top,
+.info {
+	@apply px-4;
+}
+.top {
+	@apply pt-5 flex items-end gap-3;
+}
+.close {
+	@apply green-hover;
+
+	> svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+.info {
+	@apply flex items-center gap-2.5;
+}
+.avatar {
+	@apply relative rounded-full border border-solid border-gray-300;
+	min-width: 33px;
+	min-height: 33px;
+	max-width: 33px;
+	max-height: 33px;
+
+	> img {
+		@apply image-like-bg-cover rounded-full absolute left-0 top-0 right-0 bottom-0;
+	}
+}
+.fill {
+	@apply bg-gray-800 h-full;
+}
+.list {
+	@apply flex flex-col border-t border-gray-400/40;
+}
+.link,
+.logout {
+	@apply transition-colors py-3.5 px-4 w-full flex items-center gap-2;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	&:hover {
+		@apply bg-gray-50;
+	}
+}
+.logout {
+	@apply text-left;
+}
+
+@media (max-width: 730px) {
+	.opener {
+		@apply block;
+	}
+	.overlay {
+		@apply flex;
+	}
+}
+
+@media (max-width: 440px) {
+	.opener {
+		@apply static;
+	}
+}

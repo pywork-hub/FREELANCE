@@ -1,0 +1,74 @@
+.box {
+	@apply w-full px-7 py-8 rounded-md bg-gray-100 border border-solid border-gray-300 flex items-center gap-6 black-shadow;
+
+	> svg {
+		@apply min-w-12 min-h-12 max-w-12 max-h-12;
+		stroke-width: 1.7px;
+	}
+}
+.info {
+	@apply mt-2;
+}
+.name {
+	@apply text-medium-lg mb-2 leading-lg font-bold;
+}
+.description {
+	@apply leading-lg;
+
+	> span,
+	> a {
+		@apply text-green-400 font-medium;
+	}
+
+	> a {
+		@apply green-underline-hover;
+	}
+}
+
+@media (max-width: 1100px) {
+	.box {
+		@apply p-5 gap-5;
+	}
+	.name {
+		@apply text-medium;
+	}
+	.description {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 800px) {
+	.box {
+		min-height: 120px;
+	}
+}
+
+@media (max-width: 550px) {
+	.box {
+		> svg {
+			@apply min-w-10 min-h-10 max-w-10 max-h-10;
+		}
+	}
+	.name {
+		@apply text-base;
+	}
+	.description {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 400px) {
+	.box {
+		@apply flex-col justify-center text-center gap-0;
+
+		> svg {
+			@apply min-w-8 min-h-8 max-w-8 max-h-8;
+		}
+	}
+	.name {
+		@apply text-medium-md mb-1;
+	}
+	.description {
+		@apply text-small-xl;
+	}
+}

@@ -1,0 +1,125 @@
+.wrapper {
+	@apply flex items-center gap-5;
+}
+.favorite {
+	@apply transition-colors;
+
+	> svg {
+		@apply transition-colors;
+	}
+
+	&.picked {
+		@apply text-green-400;
+
+		> svg {
+			@apply fill-green-400;
+		}
+	}
+
+	&.picked:hover {
+		@apply text-white;
+
+		> svg {
+			@apply fill-white;
+		}
+	}
+}
+.order,
+.register,
+.favorite {
+	@apply w-fit py-2.5 px-5 flex items-center justify-center gap-3 rounded-sm text-base font-medium;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.register,
+.favorite {
+	@apply btn-green-border;
+}
+.order {
+	@apply btn-green;
+}
+.confirmText {
+	@apply text-medium leading-lg;
+
+	> span {
+		@apply text-green-400;
+	}
+}
+.confirmFill {
+	@apply flex gap-5 justify-center mt-6;
+}
+.confirmBtn {
+	@apply px-7 btn-green rounded-sm;
+}
+
+@media (max-width: 1200px) {
+	.order,
+	.register,
+	.favorite {
+		@apply px-4 gap-2;
+	}
+}
+
+@media (max-width: 1000px) {
+	.confirmText {
+		@apply text-base;
+	}
+}
+
+@media (max-width: 800px) {
+	.order,
+	.register,
+	.favorite {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 550px) {
+	.confirmBtn {
+		@apply px-5;
+	}
+	.confirmText {
+		@apply text-medium-md;
+	}
+	.wrapper {
+		@apply w-full gap-2.5;
+	}
+	.register {
+		@apply py-2;
+	}
+	.order,
+	.favorite {
+		@apply w-9 h-9 p-0 rounded-full flex items-center justify-center;
+
+		> span {
+			@apply hidden;
+		}
+	}
+	.favorite {
+		@apply bg-white black-shadow;
+		
+		> svg {
+			@apply transition-colors;
+		}
+		&.picked {
+			> svg {
+				@apply fill-green-400 stroke-green-400;
+			}
+
+			&:hover {
+				> svg {
+					@apply fill-white stroke-white;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.register {
+		@apply px-3;
+	}
+}

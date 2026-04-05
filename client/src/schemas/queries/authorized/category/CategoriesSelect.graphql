@@ -1,0 +1,8 @@
+query CategoriesSelect($query: CategoryQueryInput!) {
+	categories(query: $query) {
+		categories {
+			id
+			name
+		}
+	}
+}

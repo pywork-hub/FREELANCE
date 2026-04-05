@@ -1,0 +1,35 @@
+.wrapper {
+	@apply w-full h-full text-center flex flex-col gap-12 items-start relative;
+	padding-bottom: 98px;
+}
+.back {
+	@apply flex items-center gap-2.5 btn-green py-2 px-6 rounded-sm;
+	
+	> svg {
+		@apply w-5 h-5;
+		stroke-width: 2.5px;
+	}
+}
+.fill {
+	@apply flex items-center justify-center m-auto;
+}
+.text {
+	@apply font-nunito text-medium-xl;
+}
+
+@media(max-width: 550px) {
+	.wrapper {
+		@apply gap-12 pb-14;
+	}
+	.back {
+		@apply px-4 text-medium-md;
+		
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.text {
+		@apply text-medium;
+	}
+}

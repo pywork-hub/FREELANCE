@@ -1,0 +1,5 @@
+mutation ToggleService($id: Int!) {
+	toggleService(id: $id) {
+		id
+	}
+}

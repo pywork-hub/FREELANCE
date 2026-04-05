@@ -1,0 +1,18 @@
+.input {
+	@apply bg-gray-900;
+}
+.box {
+	@apply relative;
+}
+.show {
+	@apply absolute top-0 bottom-0 my-auto right-4;
+
+	> svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+.password {
+	@apply pl-4;
+	padding-right: 54px;
+}

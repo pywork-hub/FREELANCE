@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	scroll-behavior: smooth;
+}
+
+a {
+	@apply inline-block;
+	color: inherit;
+	text-decoration: none;
+}
+
+input,
+button,
+textarea {
+	outline: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	&::-ms-reveal,
+	&::-ms-clear {
+		display: none;
+	}
+}
+
+ul,
+li {
+	@apply list-none;
+}
+
+body {
+	@apply text-base text-gray-base leading-none font-source min-h-screen flex flex-col;
+}
+
+main {
+	@apply flex flex-1 flex-col;
+}

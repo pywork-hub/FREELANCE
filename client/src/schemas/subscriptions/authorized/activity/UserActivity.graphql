@@ -1,0 +1,6 @@
+subscription UserActivity($userId: Int!) {
+	userActivity(userId: $userId) {
+		status
+		lastSeen
+	}
+}

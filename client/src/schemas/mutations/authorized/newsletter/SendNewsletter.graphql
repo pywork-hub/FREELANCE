@@ -1,0 +1,3 @@
+mutation SendNewsletter($data: NewsletterInput!) {
+	sendNewsletter(data: $data)
+}

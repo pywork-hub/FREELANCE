@@ -1,0 +1,86 @@
+.task {
+	@apply w-full text-center;
+}
+.circle {
+	@apply w-28 h-28 rounded-full bg-white flex items-center justify-center mx-auto mb-4 border border-gray-300 up-hover black-shadow;
+
+	> svg {
+		@apply w-14 h-14 text-green-base;
+		stroke-width: 1.7px;
+	}
+}
+.name {
+	@apply text-2lg font-medium mb-3 leading-lg;
+}
+.description {
+	@apply leading-lg text-gray-100;
+
+	> span {
+		@apply text-white font-bold;
+	}
+}
+
+@media (max-width: 1200px) {
+	.circle {
+		@apply w-24 h-24;
+
+		> svg {
+			@apply w-12 h-12;
+		}
+	}
+	.name {
+		@apply text-lg;
+	}
+	.description {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 1100px) {
+	.description {
+		@apply w-full mx-auto;
+		max-width: 400px;
+	}
+}
+
+@media (max-width: 600px) {
+	.circle {
+		@apply w-20 h-20 mb-3;
+
+		> svg {
+			@apply w-10 h-10;
+		}
+	}
+	.name {
+		@apply text-medium-lg mb-2;
+	}
+	.description {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 470px) {
+	.circle {
+		width: 70px;
+		height: 70px;
+
+		> svg {
+			@apply w-8 h-8;
+		}
+	}
+	.name {
+		@apply text-medium;
+	}
+	.description {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 370px) {
+	.name {
+		@apply text-base;
+	}
+	.description {
+		@apply text-small-xl;
+	}
+}

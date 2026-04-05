@@ -1,0 +1,37 @@
+.wrapper {
+	@apply rounded-sm text-white;
+}
+.top {
+	@apply flex items-center gap-3 justify-center py-4 px-5;
+
+	> svg {
+		@apply w-5 h-5 text-yellow-400;
+	}
+}
+.title {
+	@apply font-medium text-medium-lg;
+}
+.table {
+	@apply w-full;
+}
+.row {
+	@apply border-b border-black;
+
+	&:first-child {
+		@apply border-t;
+	}
+
+	&:nth-child(6) {
+		@apply border-b-0;
+	}
+}
+.label {
+	@apply p-3 text-gray-400 uppercase font-medium;
+}
+.item {
+	@apply text-center p-3;
+
+	> img {
+		@apply mx-auto;
+	}
+}

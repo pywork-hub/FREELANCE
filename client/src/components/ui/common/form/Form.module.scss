@@ -1,0 +1,24 @@
+.field {
+	@apply w-full flex flex-col gap-1.5;
+}
+.input {
+	@apply px-4 w-full rounded-sm text-white;
+	padding-top: 11px;
+	padding-bottom: 11px;
+
+	&::placeholder {
+		@apply text-gray-500 font-nunito;
+	}
+}
+.label {
+	@apply text-medium;
+}
+.error {
+	@apply text-small-xl text-red-error;
+}
+
+@media(max-width: 550px) {
+	.error {
+		@apply text-small-lg;
+	}
+}

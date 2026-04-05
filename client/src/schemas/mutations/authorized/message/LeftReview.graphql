@@ -1,0 +1,13 @@
+mutation LeftReview($data: ReviewInput!) {
+	leftReview(data: $data) {
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		type
+		status
+	}
+}

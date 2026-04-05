@@ -1,0 +1,5 @@
+mutation DuplicateExample($id: Int!) {
+	duplicateExample(id: $id) {
+		id
+	}
+}

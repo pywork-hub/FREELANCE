@@ -1,0 +1,5 @@
+mutation UpdateExample($id: Int!, $data: ExampleInput!) {
+	updateExample(id: $id, data: $data) {
+		id
+	}
+}

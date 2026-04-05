@@ -1,0 +1,261 @@
+.offer,
+.order,
+.review {
+	@apply mt-3;
+}
+.offer__top,
+.review__top {
+	@apply font-bold;
+}
+.offer__top,
+.review__top {
+	@apply px-5 py-3 bg-green-base text-white rounded-t-md flex items-center gap-3 text-base;
+}
+.offer__content,
+.review__content {
+	@apply px-5 py-3 border-l border-r border-gray-300 leading-lg overflow-y-auto overflow-x-hidden;
+	max-height: 150px;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+
+	p {
+		@apply my-1;
+	}
+
+	ul,
+	ol {
+		@apply pl-4;
+
+		> li {
+			@apply my-1;
+		}
+	}
+
+	ol,
+	ol > li {
+		@apply list-decimal;
+	}
+
+	ul,
+	ul > li {
+		@apply list-disc;
+	}
+}
+.review__content {
+	@apply border-b rounded-b-md;
+}
+.review__rating {
+	@apply flex items-center gap-1 text-green-400 font-semibold;
+
+	> svg {
+		@apply fill-green-400;
+		width: 18px;
+		height: 18px;
+	}
+}
+.review__head {
+	@apply mb-2 flex items-center justify-between gap-10;
+}
+.review__comment {
+	@apply leading-3lg;
+}
+.review__label {
+	@apply font-medium text-green-400 text-base;
+}
+.offer__bottom {
+	@apply border border-gray-300 rounded-b-md px-5 py-3 flex items-center gap-10 justify-between;
+}
+.offer__payment {
+	@apply py-2 px-4 rounded-sm btn-green;
+	color: white !important;
+}
+.review__offer {
+	@apply py-3 px-5 rounded-md flex flex-col gap-2 items-start border;
+}
+.review__opener {
+	@apply py-1.5 px-6 rounded-sm btn-green;
+}
+.order {
+	@apply p-3 rounded-md border flex items-center gap-3;
+
+	> svg {
+		@apply w-14 h-14;
+		stroke-width: 1.4px;
+	}
+}
+.order__name {
+	@apply text-medium-xl mb-1;
+}
+.order__text,
+.review__text {
+	@apply text-base;
+}
+.order__link {
+	@apply underline underline-offset-4 ml-0.5;
+}
+.order__created,
+.order__completed,
+.review__offer {
+	@apply border-green-base;
+
+	> svg {
+		@apply stroke-green-base;
+	}
+}
+.order__canceled {
+	@apply border-red-400;
+
+	> svg {
+		@apply stroke-red-400;
+	}
+
+	.order__link {
+		@apply text-red-400;
+	}
+}
+.order__expired {
+	@apply border-orange-400;
+
+	> svg {
+		@apply stroke-orange-400;
+	}
+
+	.order__link {
+		@apply text-orange-400;
+	}
+}
+.order__refunded {
+	@apply border-pink-400;
+
+	> svg {
+		@apply stroke-pink-400;
+	}
+
+	.order__link {
+		@apply text-pink-400;
+	}
+}
+
+@media (max-width: 1200px) {
+	.order__name {
+		@apply text-medium-lg;
+	}
+	.order > svg {
+		@apply w-12 h-12;
+		stroke-width: 1.7px;
+	}
+	.order__text,
+	.review__text {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 1000px) {
+	.order__name {
+		@apply text-medium mb-0.5;
+	}
+	.order > svg {
+		@apply w-11 h-11;
+	}
+	.offer__payment {
+		@apply py-1.5;
+	}
+	.offer__term {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 550px) {
+	.offer__content,
+	.review__content {
+		&::-webkit-scrollbar {
+			@apply w-1;
+		}
+	}
+	.review__rating {
+		@apply gap-1.5 text-medium-sm leading-none;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+	.order__name {
+		@apply text-base;
+	}
+	.order > svg {
+		@apply w-8 h-8;
+		stroke-width: 1.5px;
+	}
+	.order__text,
+	.review__text {
+		@apply text-medium-sm;
+	}
+	.offer__top,
+	.review__top {
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+	.offer__name,
+	.review__name,
+	.review__label {
+		@apply text-medium-md;
+	}
+	.offer__top,
+	.offer__content,
+	.offer__bottom,
+	.review__top,
+	.review__content {
+		@apply px-3.5;
+	}
+	.offer__bottom {
+		@apply py-2;
+	}
+	.offer__term {
+		@apply text-small-xl;
+	}
+	.offer,
+	.order,
+	.review {
+		@apply mt-1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.offer__bottom {
+		@apply flex-col items-start gap-2;
+	}
+}
+
+@media (max-width: 430px) {
+	.offer__top,
+	.review__top {
+		@apply gap-2;
+	}
+}
+
+@media (max-width: 400px) {
+	.offer__name,
+	.review__name,
+	.review__label {
+		@apply text-medium-sm;
+	}
+	.review__comment {
+		@apply text-small-xl;
+	}
+}

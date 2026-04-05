@@ -1,0 +1,10 @@
+.actions {
+	@apply py-3 px-7 flex items-stretch gap-5 border-t border-b border-solid border-gray-300/20 font-nunito text-medium-md;
+}
+.button {
+	@apply btn-green px-5 py-2 flex items-center gap-2 font-medium rounded-sm;
+
+	> svg {
+		@apply w-5 h-5;
+	}
+}

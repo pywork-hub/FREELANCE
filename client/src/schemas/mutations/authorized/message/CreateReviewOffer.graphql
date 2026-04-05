@@ -1,0 +1,13 @@
+mutation CreateReviewOffer($data: ReviewOfferInput!) {
+	createReviewOffer(data: $data) {
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		type
+		status
+	}
+}

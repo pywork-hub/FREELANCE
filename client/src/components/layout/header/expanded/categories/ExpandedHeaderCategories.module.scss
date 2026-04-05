@@ -1,0 +1,157 @@
+.categories {
+	@apply border border-l-0 border-r-0 border-gray-300 border-solid;
+}
+.list {
+	@apply w-full table;
+}
+.item {
+	@apply relative table-cell;
+
+	&::after {
+		@apply absolute right-0 top-0 bottom-0 my-auto h-3/5 bg-gray-300;
+		content: '';
+		width: 1px;
+	}
+
+	&:first-child {
+		.link {
+			@apply pl-0 text-left;
+		}
+	}
+
+	&:last-child,
+	&:nth-last-child(2) {
+		&::after {
+			@apply content-none;
+		}
+
+		.link {
+			@apply pr-0 text-right;
+		}
+	}
+}
+.dropdownItem {
+	@apply relative hidden;
+}
+.link,
+.moreLink {
+	@apply text-center;
+}
+.link,
+.dropdownLink {
+	@apply px-5;
+}
+.moreLink {
+	@apply pl-5 flex items-center justify-end gap-2.5;
+}
+.ellipsis {
+	@apply flex items-center gap-1;
+
+	> span {
+		@apply inline-block rounded-full bg-black;
+		width: 3px;
+		height: 3px;
+	}
+}
+.link,
+.moreLink,
+.dropdownLink {
+	@apply w-full py-3 font-nunito font-medium text-medium-md whitespace-nowrap green-hover;
+}
+.dropdownLink {
+	@apply transition-colors;
+
+	&:hover {
+		@apply bg-gray-300/20;
+	}
+}
+.more {
+	@apply relative cursor-pointer hidden;
+
+	&:hover {
+		.dropdown {
+			@apply animate-fade visible pointer-events-auto;
+		}
+	}
+}
+.dropdown {
+	@apply right-0 bg-white;
+	transform: translateY(calc(100%));
+	min-width: 200px;
+}
+
+@media (max-width: 1150px) {
+	.more {
+		@apply block;
+	}
+	.item:nth-last-child(2) {
+		@apply hidden;
+	}
+	.dropdownItem:last-child {
+		@apply block;
+	}
+}
+
+@media (max-width: 1100px) {
+	.item:nth-last-child(3) {
+		@apply hidden;
+	}
+	.dropdownItem:nth-last-child(2) {
+		@apply block;
+	}
+}
+
+@media (max-width: 920px) {
+	.item:nth-last-child(4) {
+		@apply hidden;
+	}
+	.dropdownItem:nth-last-child(3) {
+		@apply block;
+	}
+}
+
+@media (max-width: 680px) {
+	.item:nth-last-child(5) {
+		@apply hidden;
+	}
+	.dropdownItem:nth-last-child(4) {
+		@apply block;
+	}
+}
+
+@media (max-width: 550px) {
+	.link,
+	.moreLink,
+	.dropdownLink {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 520px) {
+	.item:nth-last-child(6) {
+		@apply hidden;
+	}
+	.dropdownItem:nth-last-child(5) {
+		@apply block;
+	}
+}
+
+@media (max-width: 350px) {
+	.link,
+	.dropdownLink {
+		@apply px-4;
+	}
+	.item {
+		&:first-child {
+			.link {
+				@apply pr-4;
+			}
+		}
+
+		&:last-child {
+			.link {
+				@apply pl-4;
+			}
+		}
+	}
+}

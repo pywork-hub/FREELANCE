@@ -1,0 +1,22 @@
+query Services($query: ServiceQueryInput!, $categorySlug: String) {
+	services(query: $query, categorySlug: $categorySlug) {
+		services {
+			id
+			name
+			slug
+			fromPrice
+			fromSalePrice
+			fromTerm
+			excerpt
+			coverPath
+			videoPath
+			categories {
+				name
+				slug
+			}
+			averageRating
+			visibility
+		}
+		count
+	}
+}

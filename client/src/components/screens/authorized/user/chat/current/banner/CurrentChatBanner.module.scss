@@ -1,0 +1,323 @@
+.banner {
+	@apply w-full px-4 border-b border-b-gray-300 flex justify-between gap-10;
+	min-height: 70px;
+	max-height: 70px;
+}
+.left {
+	@apply flex items-center gap-3;
+}
+.fill {
+	@apply w-full;
+}
+.user {
+	@apply flex items-center gap-4;
+}
+.back {
+	@apply hidden green-hover;
+}
+.avatar {
+	@apply image-like-bg-cover rounded-full;
+	min-width: 36px;
+	min-height: 36px;
+	max-width: 36px;
+	max-height: 36px;
+}
+.info {
+	@apply flex flex-col items-start gap-1.5;
+}
+.login {
+	@apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+}
+.deleteBtn,
+.offerBtn,
+.changeBtn,
+.reviewBtn {
+	@apply w-full py-2 rounded-sm text-medium-md;
+}
+.reviewBtn {
+	@apply btn-orange;
+}
+.offerBtn {
+	@apply btn-green;
+}
+.deleteBtn {
+	@apply btn-red;
+}
+.deleteLoader {
+	@apply my-2 mx-auto w-7 h-7;
+}
+.offerLoader {
+	@apply w-full flex justify-center;
+
+	> svg {
+		@apply w-7 h-7;
+	}
+}
+.changeBtn {
+	@apply btn-green-border;
+}
+.managers {
+	@apply flex flex-wrap gap-4;
+}
+.manager {
+	@apply w-full;
+	max-width: calc(100% / 3 - 11px);
+}
+.managerBtn {
+	@apply w-full px-4 py-2 btn-green-border rounded-sm flex flex-col justify-center items-center gap-1.5;
+	word-break: break-all;
+
+	> img {
+		@apply image-like-bg-cover rounded-full border-2 border-solid border-transparent;
+		width: 33px;
+		height: 33px;
+	}
+
+	&:hover {
+		> img {
+			@apply border-white;
+		}
+	}
+}
+.form {
+	@apply flex flex-wrap gap-6;
+}
+.field {
+	max-width: calc(50% - 12px);
+}
+.term {
+	@apply w-full;
+}
+.submitWrapper {
+	@apply text-center;
+}
+.submit {
+	@apply py-2.5 px-6 rounded-sm btn-green;
+}
+.activity {
+	@apply flex items-center gap-3;
+}
+.activityStatus {
+	@apply text-medium-sm flex items-center gap-1 font-nunito;
+
+	& > span {
+		@apply block w-1.5 h-1.5 rounded-full;
+	}
+
+	&.online {
+		@apply text-green-base;
+
+		& > span {
+			@apply bg-green-400;
+		}
+	}
+	&.offline {
+		@apply text-red-base;
+
+		& > span {
+			@apply bg-red-base;
+		}
+	}
+}
+.lastSeen {
+	@apply font-nunito text-small-xl;
+}
+.dropdown {
+	@apply -right-4 bg-white flex flex-col gap-1.5 p-3;
+	transform: translateY(calc(100% - 1px));
+	min-width: 180px;
+}
+.toggle {
+	@apply h-full relative pl-10 cursor-pointer flex items-center;
+
+	> svg {
+		@apply text-gray-400 transition-all;
+	}
+
+	&:hover {
+		.dropdown {
+			@apply animate-fade visible pointer-events-auto;
+		}
+
+		> svg {
+			@apply text-green-400;
+		}
+	}
+}
+
+@media (max-width: 1100px) {
+	.deleteBtn,
+	.offerBtn,
+	.changeBtn,
+	.reviewBtn {
+		@apply py-2 px-3.5;
+	}
+	.activity {
+		@apply flex gap-1.5;
+	}
+}
+.services {
+	@apply flex flex-wrap gap-6;
+}
+.service {
+	@apply cursor-pointer up-hover;
+	max-width: calc(100% / 3 - 16px);
+
+	a,
+	button {
+		pointer-events: none !important;
+	}
+}
+.pagination {
+	@apply mt-5;
+}
+.search {
+	@apply mb-5 border border-solid border-gray-300 rounded-sm;
+
+	input {
+		@apply text-gray-base;
+
+		&::placeholder {
+			@apply text-gray-base;
+		}
+	}
+}
+.loader {
+	@apply w-12 h-12 mx-auto;
+}
+
+@media (max-width: 1200px) {
+	.services {
+		@apply gap-5;
+	}
+	.service {
+		max-width: calc(50% - 10px);
+	}
+}
+
+@media (max-width: 1000px) {
+	.managerBtn {
+		@apply px-3 gap-2 text-medium-md;
+
+		> img {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.search {
+		@apply mb-4;
+
+		input {
+			@apply text-medium-md;
+		}
+	}
+	.services {
+		@apply gap-4;
+	}
+	.service {
+		@apply max-w-full;
+	}
+	.back {
+		@apply block;
+	}
+}
+
+@media (max-width: 600px) {
+	.term > div {
+		@apply flex-wrap;
+
+		& > div {
+			max-width: calc(50% - 6px);
+		}
+	}
+	.form {
+		@apply gap-4;
+	}
+	.field {
+		max-width: calc(50% - 8px);
+	}
+}
+
+@media (max-width: 550px) {
+	.search {
+		@apply mb-3;
+
+		input {
+			@apply text-medium-sm;
+		}
+	}
+	.field,
+	.term,
+	.editor {
+		label,
+		input {
+			@apply text-medium-md;
+		}
+	}
+	.user {
+		@apply gap-1.5;
+	}
+	.info {
+		@apply ml-1.5;
+	}
+	.toggle {
+		> svg {
+			width: 22px;
+			height: 22px;
+		}
+	}
+	.login {
+		@apply text-medium-md;
+	}
+	.lastSeen {
+		@apply text-small-lg;
+	}
+	.activityStatus {
+		@apply text-small-xl;
+
+		& > span {
+			width: 5px;
+			height: 5px;
+		}
+	}
+	.banner {
+		@apply gap-0 pl-2 pr-4;
+		min-height: 63px;
+		max-height: 63px;
+	}
+	.deleteBtn,
+	.offerBtn,
+	.changeBtn,
+	.reviewBtn {
+		@apply text-medium-sm;
+	}
+	.managers {
+		@apply gap-3;
+	}
+	.manager {
+		max-width: calc(50% - 6px);
+	}
+}
+
+@media (max-width: 430px) {
+	.form {
+		@apply gap-3;
+	}
+	.term > div > div,
+	.field {
+		max-width: 100%;
+	}
+	.banner {
+		min-height: 58px;
+		max-height: 58px;
+	}
+	.avatar {
+		min-width: 33px;
+		min-height: 33px;
+		max-width: 33px;
+		max-height: 33px;
+	}
+}

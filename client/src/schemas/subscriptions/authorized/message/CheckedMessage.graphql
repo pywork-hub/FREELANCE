@@ -1,0 +1,3 @@
+subscription CheckedMessage($roomId: Int!, $userId: Int!) {
+	checkedMessage(roomId: $roomId, userId: $userId)
+}

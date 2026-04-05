@@ -1,0 +1,60 @@
+.list {
+	@apply h-full flex items-center gap-7 mr-4;
+}
+.link {
+	@apply green-underline-hover;
+}
+.more {
+	@apply hidden items-center h-full relative cursor-pointer;
+
+	&:hover {
+		.dropdown {
+			@apply animate-fade visible pointer-events-auto;
+		}
+	}
+}
+.moreLink {
+	@apply flex items-center gap-2.5;
+}
+.ellipsis {
+	@apply flex items-center gap-1;
+
+	> span {
+		@apply inline-block rounded-full bg-white;
+		width: 3px;
+		height: 3px;
+	}
+}
+.dropdown {
+	@apply left-0 bg-white;
+	transform: translateY(calc(100%)) translateX(-50%);
+	min-width: 200px;
+}
+.dropdownLink {
+	@apply w-full py-3 px-4 whitespace-nowrap green-hover;
+}
+.dropdownLink {
+	@apply transition-colors;
+
+	&:hover {
+		@apply bg-gray-300/20;
+	}
+}
+
+@media (max-width: 860px) {
+	.more {
+		@apply flex;
+	}
+	.item {
+		&:nth-child(2),
+		&:nth-child(3) {
+			@apply hidden;
+		}
+	}
+}
+
+@media(max-width: 730px) {
+	.list {
+		@apply hidden;
+	}
+}

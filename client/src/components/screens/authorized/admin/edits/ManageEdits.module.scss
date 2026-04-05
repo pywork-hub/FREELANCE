@@ -1,0 +1,53 @@
+.edit {
+	@apply py-10 bg-gray-900/5;
+}
+.wrapper {
+	@apply min-h-screen h-full flex flex-col items-start;
+}
+.heading {
+	@apply mb-10 mx-auto;
+}
+.form {
+	@apply w-full h-full flex flex-wrap items-start gap-x-10 gap-y-4;
+}
+.updateWrapper {
+	@apply mt-5 text-center;
+}
+.update {
+	@apply px-10 py-2.5 rounded-sm font-medium btn-green;
+}
+.seo {
+	@apply w-full flex flex-col;
+}
+.seo,
+.seoItem + .seoItem {
+	@apply mt-14;
+}
+.title {
+	@apply mb-4 text-center;
+}
+.fill {
+	@apply w-full animate-fade flex flex-wrap gap-x-10 gap-y-4;
+}
+.object {
+	@apply animate-fade w-full flex flex-col gap-y-4;
+}
+.objectItem {
+	@apply w-full flex items-start justify-between gap-x-10;
+}
+.toggles {
+	@apply flex justify-between gap-10 mt-5;
+}
+.toggleWrapper {
+	@apply flex justify-center;
+}
+.toggle {
+	@apply btn-green rounded-sm py-2 px-6;
+
+	&.remove {
+		@apply btn-red;
+	}
+}
+.graphsBtn {
+	@apply text-right;
+}

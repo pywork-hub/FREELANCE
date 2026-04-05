@@ -1,0 +1,30 @@
+query CategoryById($id: Int!) {
+	categoryById(id: $id) {
+		name
+		coverPath
+		parents {
+			id
+			name
+		}
+		seo {
+			title
+			description
+			keywords
+			graphs {
+				title
+				description
+				images {
+					url
+					alt
+				}
+			}
+		}
+		block {
+			heading
+			items {
+				heading
+				content
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+query ExamplesSelect($query: QueryFullestInput!) {
+	examples(query: $query) {
+		examples {
+			id
+			name
+		}
+	}
+}

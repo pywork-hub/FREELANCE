@@ -1,0 +1,53 @@
+.market {
+	@apply flex py-20 bg-gray-900/10;
+  flex: 1 1 0;
+}
+.wrapper {
+	@apply w-full h-full flex flex-col gap-y-14 gap-x-10;
+}
+.container {
+	@apply h-full;
+}
+.filters {
+	@apply bg-white px-5 py-6 rounded-sm;
+	min-width: 320px;
+	max-width: 320px;
+}
+
+@media (max-width: 1300px) {
+	.filters {
+		min-width: 285px;
+		max-width: 285px;
+	}
+	.wrapper {
+		@apply gap-y-10 gap-x-10;
+	}
+}
+
+@media (max-width: 1200px) {
+	.market {
+		@apply py-16;
+	}
+	.wrapper {
+		@apply flex-col items-end gap-y-6;
+	}
+	.filters {
+		@apply max-w-full p-0;
+		min-width: auto;
+	}
+}
+
+@media (max-width: 1000px) {
+	.market {
+		@apply py-14;
+	}
+	.wrapper {
+		@apply gap-y-4;
+	}
+}
+
+@media (max-width: 700px) {
+	.market {
+		@apply py-10;
+	}
+}

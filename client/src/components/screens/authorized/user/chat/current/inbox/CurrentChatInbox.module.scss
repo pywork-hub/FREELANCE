@@ -1,0 +1,6 @@
+.inbox {
+	@apply animate-fade w-full h-full flex flex-col;
+}
+.inner {
+	@apply w-full h-full flex flex-col justify-between overflow-hidden;
+}

@@ -1,0 +1,18 @@
+query GetFolderItems($folderPath: String!) {
+	folderItems(folderPath: $folderPath) {
+		folders {
+			name
+			size
+			count
+			path
+			createdAt
+		}
+		files {
+			name
+			size
+			extension
+			path
+			createdAt
+		}
+	}
+}

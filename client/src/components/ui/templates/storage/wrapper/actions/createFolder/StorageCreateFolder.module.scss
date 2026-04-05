@@ -1,0 +1,12 @@
+.form {
+	@apply flex flex-col items-center;
+}
+.addWrapper {
+	@apply text-center;
+}
+.add {
+	@apply mx-auto mt-5 px-8 py-2.5 rounded-sm btn-green;
+}
+.title {
+	@apply text-center font-semibold text-lg mb-5;
+}

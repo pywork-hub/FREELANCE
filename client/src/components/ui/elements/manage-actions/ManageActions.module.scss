@@ -1,0 +1,11 @@
+.actions {
+	@apply absolute z-1 top-0 right-0 left-0 mx-auto w-fit p-2.5 px-4 bg-white rounded-sm black-shadow flex items-center gap-5;
+}
+.action {
+	@apply green-hover;
+	
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}

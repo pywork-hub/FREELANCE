@@ -1,0 +1,26 @@
+.quantity {
+	@apply w-fit flex rounded-sm border border-gray-300;
+}
+.button {
+	@apply py-2.5 green-hover;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.count,
+.button {
+	@apply px-2.5 flex items-center justify-center;
+}
+.count {
+	@apply font-nunito;
+}
+
+@media(max-width: 550px) {
+	.button {
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+}

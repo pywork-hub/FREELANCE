@@ -1,0 +1,15 @@
+query PageSeo($type: PageType!) {
+	pageSeo(type: $type) {
+		title
+		description
+		keywords
+		graphs {
+			title
+			description
+			images {
+				url
+				alt
+			}
+		}
+	}
+}

@@ -1,0 +1,3 @@
+mutation JwtReset($data: JwtAuthResetInput!) {
+	jwtReset(data: $data)
+}

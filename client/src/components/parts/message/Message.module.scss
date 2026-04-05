@@ -1,0 +1,267 @@
+.message {
+	@apply py-4 px-4 rounded-sm flex items-start gap-3 transition-colors hover:bg-gray-150/70 leading-2lg;
+}
+.avatar {
+	@apply rounded-full;
+	min-width: 36px;
+	min-height: 36px;
+	max-width: 36px;
+	max-height: 36px;
+	margin-top: 5px;
+}
+.fill {
+	@apply w-full;
+}
+.login {
+	@apply font-medium text-medium mb-0.5;
+}
+.content {
+	@apply font-nunito leading-3lg;
+	word-break: break-word;
+
+	a {
+		@apply text-green-base;
+	}
+
+	&.deleted {
+		@apply text-blue-400;
+	}
+}
+.edited {
+	@apply inline-block text-small-xl text-blue-400 mt-1;
+}
+.info {
+	@apply flex items-center gap-16 justify-between;
+}
+.box {
+	@apply flex items-center gap-2;
+}
+.terms {
+	@apply flex items-center gap-2;
+}
+.check {
+	@apply min-w-4 min-h-4 max-w-4 max-h-4 stroke-gray-400 transition-colors;
+
+	&.checked {
+		@apply stroke-green-base;
+	}
+}
+.time {
+	@apply whitespace-nowrap font-nunito text-small-xl text-gray-500;
+}
+.actions {
+	@apply flex gap-2 justify-between;
+}
+.buttons {
+	@apply flex justify-end gap-3 mt-4;
+}
+.save,
+.cancel {
+	@apply py-1.5 px-6 rounded-sm;
+}
+.save {
+	@apply btn-green;
+}
+.cancel,
+.delete {
+	@apply btn-red;
+}
+.dropdown {
+	@apply bg-white min-w-fit flex flex-col py-1.5 px-2;
+}
+.delete,
+.change {
+	@apply rounded-full flex items-center justify-center w-9 h-9 aspect-square;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.change {
+	@apply btn-orange;
+}
+.field {
+	@apply w-full font-nunito text-medium-md;
+
+	> textarea {
+		@apply leading-2lg overflow-y-auto overflow-x-hidden;
+		max-height: 450px;
+		scrollbar-color: #14a800 #e0e0e0;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			@apply w-2 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply w-full bg-gray-300 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply w-full bg-green-base rounded-lg;
+		}
+	}
+}
+.toggle {
+	@apply h-full relative py-3 pl-10 pr-3 cursor-pointer flex items-center;
+
+	&:hover {
+		.dropdown {
+			@apply -bottom-2.5 right-12 animate-fade visible pointer-events-auto;
+		}
+
+		span {
+			@apply bg-green-400;
+		}
+	}
+}
+.ellipsis {
+	@apply flex gap-1;
+
+	> span {
+		@apply inline-block bg-gray-400 rounded-full transition-colors;
+		width: 3px;
+		height: 3px;
+	}
+}
+.form {
+	@apply flex flex-col gap-3;
+}
+.sendWrapper {
+	@apply text-center;
+}
+.send {
+	@apply py-2 px-7 rounded-sm btn-green;
+}
+.loader {
+	@apply mx-auto;
+
+	> svg {
+		@apply w-7 h-7;
+	}
+}
+.textarea {
+	> textarea {
+		@apply resize-none bg-transparent border-2 border-green-base text-gray-base leading-3lg;
+		min-height: 160px;
+		scrollbar-color: #14a800 #e0e0e0;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			@apply w-2 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply w-full bg-gray-300 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply w-full bg-green-base rounded-lg;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.login {
+		@apply text-base;
+	}
+	.content,
+	.field > textarea {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 1000px) {
+	.field {
+		> textarea {
+			max-height: 400px;
+		}
+	}
+	.save,
+	.cancel {
+		@apply px-5 text-medium-sm;
+	}
+	.info {
+		@apply gap-12;
+	}
+}
+
+@media (max-width: 800px) {
+	.field {
+		> textarea {
+			max-height: 35vh;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.rating,
+	.textarea {
+		label {
+			@apply text-base;
+		}
+	}
+	.send {
+		@apply px-5;
+	}
+	.save,
+	.cancel {
+		@apply px-3.5 text-small-xl;
+	}
+	.delete,
+	.change {
+		@apply w-8 h-8;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+	.box {
+		@apply gap-1;
+	}
+	.toggle {
+		@apply pl-3 pr-2;
+	}
+	.message {
+		@apply py-3;
+
+		&:hover .dropdown {
+			@apply right-9;
+		}
+	}
+	.info {
+		@apply gap-10;
+	}
+	.avatar {
+		min-width: 31px;
+		min-height: 31px;
+		max-width: 31px;
+		max-height: 31px;
+	}
+	.time {
+		@apply text-small-lg;
+	}
+	.login {
+		@apply text-medium-md;
+	}
+	.content,
+	.field > textarea {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 450px) {
+	.info {
+		@apply gap-4;
+	}
+	.message {
+		@apply px-3;
+	}
+}
+
+@media (max-width: 400px) {
+	.textarea {
+		@apply text-medium-sm;
+	}
+}

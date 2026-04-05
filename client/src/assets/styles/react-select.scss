@@ -1,0 +1,158 @@
+/* React Select */
+.react-select {
+	&__control {
+		@apply px-4 py-2.5;
+		background-color: #242529 !important;
+		border: none !important;
+		border-radius: 5px !important;
+		border-bottom: none !important;
+		box-shadow: none !important;
+
+		&--menu-is-open {
+			border-color: var(--primary-color) !important;
+		}
+	}
+
+	&__value-container {
+		padding: 0 !important;
+		cursor: text !important;
+	}
+
+	&__input-container {
+		padding: 0 !important;
+		margin: 0 !important;
+		color: rgba(255, 255, 255, 0.96) !important;
+	}
+
+	&__single-value {
+		color: rgba(255, 255, 255, 0.96) !important;
+	}
+
+	&__control {
+		min-height: auto !important;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+	}
+
+	&__indicator {
+		padding: 0 !important;
+		color: #66676e !important;
+
+		&:hover {
+			color: #999aa5 !important;
+		}
+
+		> svg {
+			@apply transition-transform;
+		}
+	}
+
+	&__multi-value {
+		background-color: rgba(#999aa5, 0.6) !important;
+		border-radius: 0.5rem !important;
+	}
+
+	&__multi-value__label {
+		font-size: 80% !important;
+		color: rgba(255, 255, 255, 0.96) !important;
+	}
+
+	&__multi-value__remove {
+		color: rgba(white, 0.8) !important;
+
+		&:hover {
+			background-color: #39393f !important;
+			color: rgba(white, 1) !important;
+		}
+	}
+
+	&__menu {
+		@apply animate-scaleIn;
+		margin: 0 !important;
+		background-color: #292a2e !important;
+		color: rgba(white, 0.6) !important;
+		z-index: 30 !important;
+		border-top-left-radius: 0 !important;
+		border-top-right-radius: 0 !important;
+
+		&-list {
+			padding: 0 !important;
+		}
+	}
+
+	&__option {
+		cursor: pointer !important;
+
+		&--is-focused,
+		&--is-selected {
+			background-color: #39393f !important;
+
+			&:last-child {
+				border-bottom-left-radius: 4px !important;
+				border-bottom-right-radius: 4px !important;
+			}
+		}
+	}
+
+	&-container {
+		> div {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+
+		.form-control__control {
+			@apply outline-border-none transition-all;
+			border-color: #ced4da !important;
+			box-shadow: none !important;
+		}
+
+		&:hover,
+		&--menu-is-open {
+			border-color: #ced4da !important;
+		}
+
+		.form-control__indicators {
+			@apply cursor-pointer;
+		}
+	}
+
+	&__control--menu-is-open {
+		border-bottom-left-radius: 0px !important;
+		border-bottom-right-radius: 0px !important;
+
+		.custom-select-top__indicator {
+			> svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.public {
+	&-DraftStyleDefault-block {
+		margin: 0 !important;
+	}
+	&-DraftEditor-content {
+		@apply p-4 overflow-x-hidden overflow-y-auto;
+		scrollbar-color: #333333 #b2b3b6;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			@apply w-2 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply w-full rounded-lg;
+			background-color: #b2b3b6;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply w-full bg-gray-900 rounded-lg;
+		}
+	}
+}

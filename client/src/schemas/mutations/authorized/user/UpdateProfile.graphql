@@ -1,0 +1,16 @@
+mutation UpdateProfile($data: ProfileInput!) {
+	updateProfile(data: $data) {
+		user {
+			id
+			profile {
+				email
+				login
+				avatarPath
+			}
+			favorites {
+				slug
+			}
+			roles
+		}
+	}
+}

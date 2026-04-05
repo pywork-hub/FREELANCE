@@ -1,0 +1,13 @@
+subscription NewLastMessage($roomId: Int!) {
+	roomMessages(roomId: $roomId) {
+		id
+		sender {
+			id
+		}
+		type
+		content
+		isChecked
+		status
+		createdAt
+	}
+}

@@ -1,0 +1,8 @@
+query RequestById($id: Int!) {
+	requestById(id: $id) {
+		firstName
+		lastName
+		email
+		message
+	}
+}

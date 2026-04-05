@@ -1,0 +1,5 @@
+mutation UpdateAttribute($id: Int!, $data: AttributeInput!) {
+	updateAttribute(id: $id, data: $data) {
+		id
+	}
+}

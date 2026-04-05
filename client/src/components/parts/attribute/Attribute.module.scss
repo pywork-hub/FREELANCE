@@ -1,0 +1,16 @@
+.attribute {
+	@apply w-full rounded-sm black-shadow px-4 py-3 flex flex-col gap-3 items-start justify-end;
+	aspect-ratio: 4 / 2.5;
+}
+.opener {
+	@apply btn-green py-2 px-4 rounded-sm;
+}
+.name {
+	@apply font-medium text-medium-xl leading-md;
+}
+.properties {
+	@apply flex flex-wrap gap-1.5;
+}
+.property {
+	@apply font-medium text-small-lg btn-green rounded-sm py-1 px-1.5 font-nunito;
+}

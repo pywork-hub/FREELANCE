@@ -1,0 +1,17 @@
+query UserOrders($query: QueryInput!) {
+	orders(query: $query) {
+		id
+		name
+		description
+		total
+		term
+		partner {
+			userId
+			login
+			avatarPath
+		}
+		status
+		createdAt
+		termUpdatedAt
+	}
+}

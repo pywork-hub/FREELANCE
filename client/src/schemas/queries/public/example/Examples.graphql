@@ -1,0 +1,25 @@
+query Examples($query: QueryFullestInput!) {
+	examples(query: $query) {
+		examples {
+			id
+			name
+			slug
+			coverPath
+			imagePath
+			url
+			visibility
+			review {
+				rating
+				comment
+				user {
+					profile {
+						login
+						avatarPath
+					}
+				}
+				createdAt
+			}
+		}
+		count
+	}
+}

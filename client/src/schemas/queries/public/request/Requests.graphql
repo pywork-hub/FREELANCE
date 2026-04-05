@@ -1,0 +1,12 @@
+query Requests($query: QueryInput!) {
+	requests(query: $query) {
+		requests {
+			id
+			firstName
+			lastName
+			email
+			message
+		}
+		count
+	}
+}

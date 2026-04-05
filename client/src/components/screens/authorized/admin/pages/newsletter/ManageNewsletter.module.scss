@@ -1,0 +1,35 @@
+.form {
+	@apply w-full h-full flex flex-wrap items-start gap-x-10 gap-y-4;
+}
+.field,
+.select {
+	max-width: calc(50% - 20px);
+}
+.updateWrapper {
+	@apply mt-5 text-center;
+}
+.update {
+	@apply px-10 py-2.5 rounded-sm font-medium btn-green;
+
+	> svg {
+		@apply w-7 h-7 stroke-white;
+	}
+}
+.upload {
+	@apply w-full font-nunito;
+}
+.box {
+	@apply py-20 px-5 text-center border border-dashed border-gray-500 rounded-sm transition-colors;
+
+	&.dragged {
+		@apply border-green-400;
+	}
+}
+.text {
+	> span {
+		@apply text-green-400;
+	}
+}
+.delete {
+	@apply btn-red rounded-sm py-2 px-6 mt-5;
+}

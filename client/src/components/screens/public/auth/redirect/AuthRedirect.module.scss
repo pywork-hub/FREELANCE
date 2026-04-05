@@ -1,0 +1,57 @@
+.section {
+	@apply flex;
+	flex: 1 1 0;
+}
+.container {
+	@apply my-auto;
+}
+.heading {
+	@apply mb-8 text-center;
+
+	> span {
+		@apply text-green-400;
+	}
+}
+.wrapper {
+	@apply h-full py-10 flex flex-col justify-center items-center;
+}
+.list {
+	@apply flex gap-2;
+}
+.btn {
+	@apply btn-green py-5 px-7 rounded-lg flex flex-col items-center gap-2 font-medium;
+	width: 140px;
+
+	> svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.heading {
+		@apply mb-6;
+	}
+	.btn {
+		@apply py-4 px-6;
+		width: 130px;
+
+		> svg {
+			@apply w-5 h-5;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.btn {
+		@apply px-5;
+		width: 125px;
+	}
+}
+
+@media (max-width: 400px) {
+	.btn {
+		@apply py-3.5 px-4 text-medium-md;
+		width: 110px;
+	}
+}

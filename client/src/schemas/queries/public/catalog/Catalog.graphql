@@ -1,0 +1,44 @@
+query Catalog($data: CatalogInput!) {
+	catalog(data: $data) {
+		categories {
+			name
+			slug
+			coverPath
+		}
+		filters {
+			attributes {
+				name
+				slug
+				properties {
+					name
+					slug
+				}
+			}
+			minPrice
+			maxPrice
+			minTerm
+			maxTerm
+		}
+		categoryName
+		block {
+			heading
+			items {
+				heading
+				content
+			}
+		}
+		seo {
+			title
+			description
+			keywords
+			graphs {
+				title
+				description
+				images {
+					url
+					alt
+				}
+			}
+		}
+	}
+}

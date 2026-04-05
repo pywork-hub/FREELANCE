@@ -1,0 +1,5 @@
+mutation DeleteAttribute($id: Int!) {
+	deleteAttribute(id: $id) {
+		id
+	}
+}

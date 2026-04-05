@@ -1,0 +1,5 @@
+mutation DeleteExample($id: Int!) {
+	deleteExample(id: $id) {
+		id
+	}
+}

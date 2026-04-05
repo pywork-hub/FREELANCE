@@ -1,0 +1,24 @@
+.header {
+	@apply bg-white p-5 flex items-center justify-between;
+}
+.box {
+	@apply flex items-center gap-3;
+}
+.icon {
+	@apply bg-gray-300 rounded-full w-8 h-8 flex items-center justify-center;
+
+	> svg {
+		@apply text-green-base;
+		width: 18px;
+		height: 18px;
+	}
+}
+.heading {
+	@apply flex flex-col;
+}
+.supTitle {
+	@apply text-green-base text-medium-sm mb-1;
+}
+.title {
+	@apply font-medium text-small-lg;
+}

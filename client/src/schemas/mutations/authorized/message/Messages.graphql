@@ -1,0 +1,17 @@
+mutation Messages($roomId: Int!, $query: QueryInput!) {
+	messages(roomId: $roomId, query: $query) {
+		id
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		content
+		isChecked
+		type
+		status
+		updatedAt
+		createdAt
+	}
+}

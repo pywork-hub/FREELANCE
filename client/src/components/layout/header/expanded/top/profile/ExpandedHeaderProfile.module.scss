@@ -1,0 +1,62 @@
+.profile {
+	@apply h-full flex items-center;
+}
+.toggle {
+	@apply h-full relative pl-4 flex items-center gap-1 cursor-pointer;
+
+	> svg {
+		@apply text-gray-400 transition-all;
+	}
+
+	&:hover {
+		.dropdown {
+			@apply animate-fade visible pointer-events-auto;
+		}
+
+		> svg {
+			@apply rotate-180 text-green-400;
+		}
+	}
+}
+.avatar {
+	@apply relative rounded-full border-2 border-solid border-green-400;
+	min-width: 38px;
+	min-height: 38px;
+	max-width: 38px;
+	max-height: 38px;
+
+	> img {
+		@apply image-like-bg-cover rounded-full absolute left-0 top-0 bottom-0 right-0;
+	}
+}
+.dropdown {
+	@apply right-0 bg-white;
+	transform: translateY(calc(100% - 1px));
+	min-width: 230px;
+}
+.login {
+	@apply px-4 py-3 font-semibold text-lg;
+}
+.list {
+	@apply flex flex-col border-t border-solid border-gray-300;
+}
+.link {
+	@apply transition-colors py-2.5 px-4 w-full green-hover;
+
+	&:hover {
+		@apply bg-gray-300/20;
+	}
+}
+.logout {
+	@apply transition-colors py-2.5 px-4 w-full border-t border-solid border-gray-300;
+
+	&:hover {
+		@apply text-green-400 bg-gray-300/20;
+	}
+}
+
+@media (max-width: 550px) {
+	.profile {
+		@apply hidden;
+	}
+}

@@ -1,0 +1,21 @@
+.service {
+	@apply pt-10 pb-20;
+}
+
+@media (max-width: 1100px) {
+	.service {
+		@apply pb-14;
+	}
+}
+
+@media (max-width: 700px) {
+	.service {
+		@apply pb-12;
+	}
+}
+
+@media (max-width: 550px) {
+	.service {
+		@apply py-8;
+	}
+}

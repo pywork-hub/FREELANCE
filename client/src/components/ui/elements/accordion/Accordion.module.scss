@@ -1,0 +1,46 @@
+.accordions {
+	@apply w-full flex flex-col gap-5;
+}
+.accordion {
+	@apply rounded-sm black-shadow;
+}
+.toggle {
+	@apply w-full py-4 px-7 flex items-center justify-between gap-10 green-hover;
+
+	> svg {
+		@apply animate-fade min-w-6 min-h-6 max-w-6 max-h-6;
+	}
+
+	> span {
+		@apply text-left font-medium;
+	}
+}
+.content {
+	@apply animate-fade pb-4 px-7;
+}
+
+@media(max-width: 1000px) {
+	.toggle {
+		@apply py-3 px-5 gap-8;
+	
+		> svg {
+			@apply min-w-5 min-h-5 max-w-5 max-h-5;
+		}
+	}
+	.content {
+		@apply pb-3 px-5;
+	}
+}
+
+@media(max-width: 400px) {
+	.toggle {
+		@apply py-2.5 px-4 gap-5;
+	
+		> svg {
+			@apply min-w-4 min-h-4 max-w-4 max-h-4;
+		}
+	}
+	.content {
+		@apply pb-2.5 px-4;
+	}
+}

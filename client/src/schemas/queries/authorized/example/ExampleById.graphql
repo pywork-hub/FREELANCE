@@ -1,0 +1,19 @@
+query ExampleById($id: Int!) {
+	exampleById(id: $id) {
+		name
+		url
+		coverPath
+		imagePath
+		service {
+			id
+			name
+		}
+		user {
+			id
+			profile {
+				login
+				email
+			}
+		}
+	}
+}

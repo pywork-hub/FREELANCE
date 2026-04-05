@@ -1,0 +1,31 @@
+.content,
+.sidebar {
+	@apply py-5;
+}
+.heading {
+	@apply mx-auto text-2lg font-semibold;
+}
+.sidebar {
+	@apply fixed top-0 bottom-0 left-0 h-screen px-5 bg-gray-900;
+	width: 300px;
+}
+.content {
+	@apply pr-12 w-full min-h-screen bg-gray-150/20;
+	padding-left: 350px;
+}
+.fill {
+	@apply mt-8 flex flex-col gap-14;
+}
+.heading {
+	@apply mb-5;
+}
+.create {
+	@apply py-2 px-7 rounded-sm bg-gray-900 border border-solid border-gray-500/5 flex items-center gap-3 text-white transition-colors hover:bg-gray-900/90;
+
+	> svg {
+		@apply w-6 h-6;
+	}
+}
+.top {
+	@apply flex items-center justify-between;
+}

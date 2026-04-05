@@ -1,0 +1,18 @@
+import { registerEnumType } from '@nestjs/graphql'
+
+export enum MessageType {
+	MESSAGE = 'MESSAGE',
+	SERVICE = 'SERVICE',
+	OFFER = 'OFFER',
+	ORDER_IN_PROCESS = 'ORDER_IN_PROCESS',
+	ORDER_COMPLETED = 'ORDER_COMPLETED',
+	ORDER_CANCELED = 'ORDER_CANCELED',
+	ORDER_EXPIRED = 'ORDER_EXPIRED',
+	ORDER_REFUNDED = 'ORDER_REFUNDED',
+	REVIEW_OFFERED = 'REVIEW_OFFERED',
+	REVIEW_LEFT = 'REVIEW_LEFT',
+}
+
+registerEnumType(MessageType, {
+	name: 'MessageType',
+})

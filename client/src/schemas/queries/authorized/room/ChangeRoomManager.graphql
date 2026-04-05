@@ -1,0 +1,3 @@
+mutation ChangeRoomManager($data: ChangeRoomManagerInput!){
+	changeRoomManager(data: $data)
+}

@@ -1,0 +1,5 @@
+subscription UserTyping($roomId: Int!, $userId: Int!) {
+	userTyping(roomId: $roomId, userId: $userId) {
+		isPartnerTyping
+	}
+}

@@ -1,0 +1,3 @@
+mutation UpdatePage($type: PageType!, $data: PageInput!) {
+	updatePage(type: $type, data: $data)
+}

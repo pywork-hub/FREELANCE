@@ -1,0 +1,9 @@
+query PropertiesSelect {
+	properties {
+		id
+		name
+		attribute {
+			name
+		}
+	}
+}

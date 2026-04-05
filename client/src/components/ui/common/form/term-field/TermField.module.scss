@@ -1,0 +1,16 @@
+.wrapper {
+	@apply flex gap-3;
+}
+.input {
+	@apply bg-gray-900;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	& {
+		-moz-appearance: textfield;
+	}
+}

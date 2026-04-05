@@ -1,0 +1,56 @@
+.wrapper {
+	@apply flex;
+}
+.search {
+	@apply relative w-full flex items-center bg-white;
+	padding-left: 38px;
+
+	&.half {
+		@apply rounded-tl-sm rounded-bl-sm;
+	}
+
+	&.full {
+		@apply rounded-sm;
+	}
+}
+.icon {
+	@apply absolute bottom-0 top-0 my-auto left-3 text-gray-400;
+}
+.input {
+	@apply h-full w-full py-2 text-gray-500 font-nunito text-medium-md pr-5 rounded-sm;
+
+	&::placeholder {
+		@apply text-gray-400;
+	}
+}
+.button {
+	@apply px-4 bg-green-base rounded-tr-sm rounded-br-sm transition-colors light-green-bg-hover;
+
+	> svg {
+		@apply hidden;
+		width: 18px;
+		height: 18px;
+	}
+}
+
+@media(max-width: 900px) {
+	.search {
+		@apply pl-0;
+	}
+	.input {
+		@apply px-4;
+	}
+	.icon {
+		@apply hidden;
+	}
+	.button {
+		@apply px-3;
+
+		> span {
+			@apply hidden;
+		}
+		> svg {
+			@apply block;
+		}
+	}
+}

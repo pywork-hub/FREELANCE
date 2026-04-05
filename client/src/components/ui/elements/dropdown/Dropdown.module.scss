@@ -1,0 +1,4 @@
+.dropdown {
+	@apply w-fit absolute z-1 opacity-0 pointer-events-none invisible cursor-default rounded-sm text-gray-base whitespace-nowrap black-shadow;
+	bottom: -1px;
+}

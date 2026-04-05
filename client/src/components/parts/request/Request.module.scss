@@ -1,0 +1,36 @@
+.request {
+	@apply w-full flex flex-col gap-4 pt-14 pb-5 px-5 black-shadow bg-white border border-gray-300 rounded-sm;
+}
+.info {
+	@apply flex flex-col items-start gap-3;
+}
+.box {
+	@apply flex flex-col items-start gap-1.5;
+}
+.label {
+	@apply whitespace-nowrap;
+}
+.value {
+	word-break: break-all;
+}
+.opener {
+	@apply btn-green py-2 px-4 rounded-sm;
+}
+.message {
+	@apply leading-3lg break-words overflow-y-auto overflow-x-hidden pr-4;
+	max-height: 300px;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}

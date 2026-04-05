@@ -1,0 +1,377 @@
+.service {
+	@apply flex flex-col w-full rounded-sm border border-gray-300 black-shadow bg-white;
+
+	&:hover .favorite {
+		@apply pointer-events-auto visible opacity-100;
+	}
+}
+.head {
+	@apply w-full relative overflow-hidden;
+	padding-top: calc(2.5 / 4 * 100%);
+}
+.preview {
+	@apply absolute left-0 top-0 right-0 bottom-0 rounded-t-sm overflow-hidden w-full h-full;
+
+	> img,
+	> video {
+		@apply image-like-bg-cover absolute left-0 top-0 bottom-0 right-0 rounded-t-sm;
+	}
+
+	> img {
+		@apply opacity-100 transition-opacity;
+		transition-duration: 400ms;
+
+		&.hovered {
+			@apply opacity-0;
+		}
+	}
+
+	> video {
+		@apply animate-fade duration-300;
+	}
+}
+.clicked {
+	@apply animate-fade absolute left-0 top-0 w-10 h-10 rounded-br-sm bg-white flex items-center justify-center text-green-base;
+}
+.box {
+	@apply h-full flex flex-col py-3 px-4;
+}
+.info {
+	@apply mb-3 py-2 border-t border-b border-gray-300 flex flex-col items-start gap-2;
+}
+.heading {
+	@apply mb-2 flex items-center gap-5 justify-between;
+}
+.name {
+	@apply font-semibold text-medium-xl leading-md green-hover;
+}
+.excerpt {
+	@apply mb-2 text-medium-md leading-md;
+}
+.priceInfo {
+	@apply flex flex-wrap items-center gap-1.5;
+}
+.price,
+.salePrice {
+	@apply text-medium;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.termForm {
+	@apply flex items-center gap-1.5;
+}
+.salePrice {
+	@apply text-green-base;
+}
+.priceFrom,
+.termForm {
+	@apply whitespace-nowrap;
+}
+.termDays {
+	@apply font-normal text-medium;
+}
+.saleBox {
+	@apply flex items-center flex-wrap gap-x-2 gap-y-0.5;
+
+	.price {
+		@apply line-through;
+	}
+}
+.percent {
+	@apply text-small-xl bg-green-400 text-white px-1.5 py-1 rounded-sm;
+}
+.categories {
+	@apply mb-2 flex flex-wrap gap-1.5;
+}
+.categoryLink {
+	@apply font-medium text-small-lg btn-green rounded-sm py-1 px-1.5 font-nunito;
+}
+.favorite {
+	@apply absolute z-1 top-3 right-3 up-hover text-green-400 transition-all w-9 h-9 rounded-full bg-white black-shadow flex items-center justify-center invisible opacity-0 pointer-events-none;
+
+	> svg {
+		@apply w-5 h-5;
+	}
+
+	&.picked {
+		> svg {
+			@apply fill-green-400;
+		}
+	}
+}
+.average {
+	@apply bg-yellow-400 flex items-center gap-1 absolute left-2 bottom-2 text-white py-1 px-2 rounded-sm yellow-shadow;
+
+	> svg {
+		@apply w-4 h-4 fill-white;
+	}
+
+	> span {
+		@apply text-medium-sm;
+	}
+}
+.actions {
+	@apply h-full flex justify-center items-end gap-2.5;
+
+	.favorite {
+		@apply hidden;
+	}
+}
+.order,
+.register {
+	@apply mt-auto w-fit btn-green-border py-2.5 px-5 flex items-center justify-center gap-3 rounded-sm text-base font-medium;
+
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.confirmText {
+	@apply text-medium leading-lg;
+
+	> span {
+		@apply text-green-400;
+	}
+}
+.confirmFill {
+	@apply flex gap-5 justify-center mt-6;
+}
+.confirmBtn {
+	@apply px-7 btn-green rounded-sm;
+}
+
+@media (max-width: 1200px) {
+	.price,
+	.salePrice,
+	.termDays {
+		@apply text-base;
+	}
+	.service {
+		@apply flex-row;
+	}
+	.preview {
+		@apply rounded-bl-sm rounded-tr-none;
+
+		> img,
+		> video {
+			@apply rounded-bl-sm rounded-tr-none;
+		}
+	}
+	.head {
+		@apply pt-0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.actions .favorite {
+		@apply flex;
+	}
+	.head .favorite {
+		@apply hidden;
+	}
+	.favorite,
+	.order {
+		@apply w-10 h-10;
+
+		> svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.favorite {
+		@apply static opacity-100 visible pointer-events-auto btn-green-border;
+
+		> svg {
+			@apply stroke-green-400 transition-colors;
+		}
+
+		&:hover {
+			@apply transform-none;
+
+			> svg {
+				@apply stroke-white;
+			}
+		}
+
+		&.picked:hover {
+			> svg {
+				@apply fill-white stroke-white;
+			}
+		}
+	}
+	.order {
+		@apply p-0 rounded-full bg-white black-shadow flex items-center justify-center;
+
+		> span {
+			@apply hidden;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.confirmText {
+		@apply text-base;
+	}
+	.head {
+		@apply w-full;
+		max-width: 50%;
+		min-width: auto;
+	}
+	.box {
+		@apply w-full;
+	}
+}
+
+@media (max-width: 550px) {
+	.average {
+		> svg {
+			@apply w-3.5 h-3.5;
+		}
+
+		> span {
+			@apply text-small-xl;
+		}
+	}
+	.confirmBtn {
+		@apply px-5;
+	}
+	.confirmText {
+		@apply text-medium-md;
+	}
+	.name {
+		@apply text-medium;
+	}
+	.excerpt {
+		@apply text-medium-sm;
+	}
+	.order,
+	.register {
+		@apply text-medium-md;
+	}
+	.price,
+	.salePrice,
+	.termDays {
+		@apply text-base;
+	}
+	.priceFrom,
+	.termForm {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 480px) {
+	.head {
+		max-width: 200px;
+		min-width: 200px;
+	}
+	.preview {
+		@apply rounded-bl-sm rounded-tr-none;
+
+		> img,
+		> video {
+			@apply rounded-bl-sm rounded-tr-none;
+		}
+	}
+	.name {
+		@apply text-base;
+	}
+	.excerpt {
+		@apply text-small-xl;
+	}
+	.categoryLink,
+	.percent {
+		@apply text-small;
+	}
+	.order,
+	.register,
+	.price,
+	.salePrice,
+	.termDays,
+	.priceFrom,
+	.termForm {
+		@apply text-medium-sm;
+	}
+	.order {
+		@apply gap-2;
+
+		& > svg {
+			@apply w-4 h-4;
+		}
+	}
+	.info {
+		@apply gap-1 mb-2;
+	}
+	.priceInfo {
+		@apply gap-x-1.5 gap-y-1;
+	}
+	.percent {
+		@apply px-1;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	.saleBox {
+		@apply gap-1.5;
+	}
+	.heading,
+	.excerpt {
+		@apply mb-1;
+	}
+	.favorite,
+	.order {
+		@apply w-9 h-9;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	.head {
+		min-width: 185px;
+		max-width: 185px;
+	}
+	.order,
+	.register,
+	.price,
+	.salePrice,
+	.termDays,
+	.priceFrom,
+	.termForm {
+		@apply text-small-xl;
+	}
+	.excerpt {
+		@apply text-small-lg;
+	}
+	.categoryLink {
+		@apply text-small-md;
+	}
+}
+
+@media (max-width: 400px) {
+	.head {
+		min-width: 160px;
+		max-width: 160px;
+	}
+	.box {
+		@apply px-3;
+	}
+	.favorite,
+	.order {
+		@apply w-8 h-8;
+
+		> svg {
+			@apply w-4 h-4;
+		}
+	}
+	.register {
+		@apply px-3 gap-2;
+
+		> svg {
+			@apply w-3.5 h-3.5;
+		}
+	}
+}

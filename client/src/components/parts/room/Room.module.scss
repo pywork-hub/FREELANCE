@@ -1,0 +1,92 @@
+.link {
+	@apply w-full py-3.5 px-3 flex items-center gap-3 transition-colors;
+
+	&:hover,
+	&.picked {
+		@apply bg-gray-150/70;
+	}
+}
+.info {
+	@apply w-full overflow-hidden flex flex-col gap-2;
+}
+.head {
+	@apply flex items-center justify-between gap-6;
+}
+.login {
+	@apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+}
+.date {
+	@apply text-small-lg text-gray-400 font-nunito;
+}
+.message {
+	@apply inline-block max-w-full text-small-xl font-nunito overflow-hidden overflow-ellipsis whitespace-nowrap;
+
+	* {
+		@apply inline;
+	}
+
+	a {
+		@apply text-green-base;
+	}
+
+	&.green {
+		@apply text-green-base;
+	}
+	&.red {
+		@apply text-red-400;
+	}
+	&.orange {
+		@apply text-orange-400;
+	}
+	&.pink {
+		@apply text-pink-400;
+	}
+	&.blue {
+		@apply text-blue-400;
+	}
+}
+.avatar {
+	@apply relative rounded-full;
+	min-width: 40px;
+	min-height: 40px;
+	max-width: 40px;
+	max-height: 40px;
+
+	> img {
+		@apply image-like-bg-cover rounded-full absolute left-0 top-0 right-0 bottom-0;
+	}
+}
+.status {
+	@apply absolute bottom-0 left-0 block w-3.5 h-3.5 rounded-full border-white;
+	border-width: 3px;
+
+	&.online {
+		@apply bg-green-400;
+	}
+	&.offline {
+		@apply bg-red-base;
+	}
+}
+.bottom {
+	@apply flex items-center justify-between gap-5;
+}
+.check {
+	@apply min-w-4 min-h-4 max-w-4 max-h-4 stroke-gray-400 transition-colors;
+
+	&.checked {
+		@apply stroke-green-base;
+	}
+}
+
+@media (max-width: 550px) {
+	.login {
+		@apply text-medium-md;
+	}
+	.avatar {
+		@apply relative rounded-full;
+		min-width: 37px;
+		min-height: 37px;
+		max-width: 37px;
+		max-height: 37px;
+	}
+}

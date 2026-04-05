@@ -1,0 +1,51 @@
+.section {
+	@apply py-14;
+}
+.heading {
+	@apply mb-6;
+}
+.content {
+	@apply w-full leading-5lg text-medium;
+}
+
+@media (max-width: 1200px) {
+	.content {
+		@apply text-base;
+	}
+}
+
+@media (max-width: 1000px) {
+	.heading {
+		@apply mb-5;
+	}
+}
+
+@media (max-width: 800px) {
+	.section {
+		@apply pt-5;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-10;
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply py-8;
+	}
+	.content {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 400px) {
+	.heading {
+		@apply mb-4;
+	}
+	.content {
+		@apply text-medium-sm;
+	}
+}

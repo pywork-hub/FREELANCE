@@ -1,0 +1,99 @@
+.review {
+	@apply black-shadow rounded-md p-7;
+	min-height: 180px;
+}
+.head {
+	@apply flex items-start justify-between gap-x-5 gap-y-2 mb-4;
+}
+.info {
+	@apply flex flex-col gap-2 items-start;
+}
+.login {
+	@apply font-medium text-medium-lg;
+}
+.user {
+	@apply flex items-center gap-3;
+
+	> img {
+		@apply image-like-bg-cover rounded-full;
+		min-width: 45px;
+		min-height: 45px;
+		max-width: 45px;
+		max-height: 45px;
+	}
+}
+.comment {
+	@apply leading-3lg;
+
+	a {
+		@apply text-green-400;
+	}
+}
+.stars {
+	@apply flex gap-1 mt-0.5;
+}
+.star {
+	@apply text-gray-300;
+
+	> svg {
+		@apply w-4 h-4 fill-gray-300;
+	}
+
+	&.filled {
+		@apply text-yellow-400;
+
+		> svg {
+			@apply fill-yellow-400;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.login {
+		@apply text-medium;
+	}
+	.created,
+	.comment {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 1000px) {
+	.head {
+		@apply mb-3;
+	}
+	.user {
+		> img {
+			min-width: 40px;
+			min-height: 40px;
+			max-width: 40px;
+			max-height: 40px;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.review {
+		@apply p-5;
+		min-height: 160px;
+	}
+	.login {
+		@apply text-base;
+	}
+	.created {
+		@apply text-medium-sm;
+	}
+	.head {
+		@apply mb-2 flex-wrap;
+	}
+	.user {
+		@apply gap-2.5;
+
+		> img {
+			min-width: 37px;
+			min-height: 37px;
+			max-width: 37px;
+			max-height: 37px;
+		}
+	}
+}

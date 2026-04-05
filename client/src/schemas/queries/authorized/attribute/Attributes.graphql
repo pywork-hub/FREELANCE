@@ -1,0 +1,12 @@
+query Attributes($query: QueryInput!) {
+	attributes(query: $query) {
+		attributes {
+			id
+			name
+			properties {
+				name
+			}
+		}
+		count
+	}
+}

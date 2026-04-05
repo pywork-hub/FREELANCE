@@ -1,0 +1,7 @@
+.users {
+	@apply flex flex-wrap gap-5;
+}
+.user {
+	@apply relative;
+	max-width: calc(100% / 6 - 17px);
+}

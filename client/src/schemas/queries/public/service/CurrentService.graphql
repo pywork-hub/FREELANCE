@@ -1,0 +1,80 @@
+query CurrentService($slug: String!) {
+	currentService(slug: $slug) {
+		service {
+			id
+			name
+			slug
+			coverPath
+			videoPath
+			excerpt
+			description
+			fromPrice
+			fromSalePrice
+			fromTerm
+			categories {
+				name
+				slug
+			}
+			examples {
+				name
+				slug
+				coverPath
+				imagePath
+				url
+				review {
+					rating
+					comment
+					user {
+						profile {
+							login
+							avatarPath
+						}
+					}
+					createdAt
+				}
+			}
+			seo {
+				title
+				description
+				keywords
+				graphs {
+					title
+					description
+					images {
+						url
+						alt
+					}
+				}
+			}
+			reviews {
+				id
+				rating
+				comment
+				user {
+					id
+					profile {
+						login
+						avatarPath
+					}
+				}
+				createdAt
+			}
+		}
+		similarServices {
+			name
+			slug
+			fromPrice
+			fromSalePrice
+			fromTerm
+			excerpt
+			coverPath
+			videoPath
+			categories {
+				name
+				slug
+			}
+			averageRating
+		}
+		reviewsCount
+	}
+}

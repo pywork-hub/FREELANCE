@@ -1,0 +1,27 @@
+.section {
+	@apply flex;
+	flex: 1 1 0;
+}
+.container {
+	@apply my-auto;
+}
+.wrapper {
+	@apply h-full w-full flex justify-center items-center;
+}
+.loader {
+	@apply w-14 h-14;
+}
+.back {
+	@apply btn-green py-2.5 px-6 rounded-sm flex items-center gap-2;
+
+	> svg {
+		@apply w-5 h-5;
+		stroke-width: 2.5px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.loader {
+		@apply w-12 h-12;
+	}
+}

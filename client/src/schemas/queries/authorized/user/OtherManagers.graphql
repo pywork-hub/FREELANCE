@@ -1,0 +1,9 @@
+query OtherManagers {
+	otherManagers {
+		id
+		profile {
+			login
+			avatarPath
+		}
+	}
+}

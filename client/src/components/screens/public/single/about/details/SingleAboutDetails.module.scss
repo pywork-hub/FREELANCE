@@ -1,0 +1,55 @@
+.wrapper {
+	@apply text-medium-xl flex flex-col gap-3;
+}
+.priceInfo,
+.termInfo {
+	@apply flex items-center gap-2;
+}
+.price,
+.salePrice {
+	> svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+.salePrice {
+	@apply text-green-base;
+}
+.priceFrom,
+.termFrom {
+	@apply font-medium;
+}
+.saleBox {
+	@apply flex items-center gap-2;
+
+	.price {
+		@apply line-through;
+	}
+}
+.percent {
+	@apply text-medium-sm bg-green-400 text-white px-1.5 py-1 rounded-sm;
+}
+
+@media(max-width: 1200px) {
+	.wrapper {
+		@apply text-medium-lg;
+	}
+}
+
+@media(max-width: 800px) {
+	.wrapper {
+		@apply text-base;
+	}
+}
+
+@media(max-width: 550px) {
+	.wrapper {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 400px) {
+	.wrapper {
+		@apply gap-2;
+	}
+}

@@ -1,0 +1,7 @@
+.examples {
+	@apply flex flex-wrap gap-5;
+}
+.example {
+	@apply relative;
+	max-width: calc(100% / 5 - 16px);
+}

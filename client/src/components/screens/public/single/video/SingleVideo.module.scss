@@ -1,0 +1,14 @@
+.wrapper {
+	@apply relative;
+	aspect-ratio: 16 / 8;
+
+	> video {
+		@apply animate-fade duration-300 image-like-bg-cover absolute left-0 top-0 bottom-0 right-0 rounded-sm;
+	}
+}
+
+@media (max-width: 550px) {
+	.wrapper {
+		aspect-ratio: 16 / 9.5;
+	}
+}

@@ -1,0 +1,28 @@
+.wrapper {
+	@apply relative flex justify-center w-9 h-5;
+}
+.checked {
+	.slider {
+		@apply bg-green-base;
+
+		&::before {
+			right: 2px;
+			left: unset;
+		}
+	}
+}
+.switch {
+	@apply flex relative justify-center w-full h-full;
+}
+.input {
+	@apply opacity-0 w-0 h-0;
+}
+.slider {
+	@apply rounded-full absolute z-1 cursor-pointer w-full h-full bg-gray-400 transition-all;
+
+	&::before {
+		@apply rounded-full absolute bottom-0 top-0 my-auto bg-white transition-colors w-4 h-4;
+		content: '';
+		left: 2px;
+	}
+}

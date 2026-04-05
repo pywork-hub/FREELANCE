@@ -1,0 +1,20 @@
+.input {
+	@apply border border-gray-300 rounded-sm px-2 py-2 text-medium-md;
+	-moz-appearance: textfield;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+.label {
+	@apply text-medium-md;
+}
+
+@media(max-width: 550px) {
+	.label,
+	.input {
+		@apply text-medium-sm;
+	}
+}

@@ -1,0 +1,18 @@
+query Reviews($query: QueryInput!, $slug: String!) {
+	reviews(query: $query, slug: $slug) {
+		reviews {
+			id
+			rating
+			comment
+			user {
+				id
+				profile {
+					login
+					avatarPath
+				}
+			}
+			createdAt
+		}
+		count
+	}
+}

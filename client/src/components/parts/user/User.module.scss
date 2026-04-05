@@ -1,0 +1,32 @@
+.user {
+	@apply w-full flex flex-col gap-4 pt-14 pb-5 px-5 black-shadow bg-white border border-gray-300 rounded-sm;
+}
+.avatar {
+	@apply relative rounded-full mx-auto;
+	min-width: 80px;
+	min-height: 80px;
+	max-width: 80px;
+	max-height: 80px;
+
+	> img {
+		@apply image-like-bg-cover rounded-full absolute left-0 top-0 right-0 bottom-0;
+	}
+}
+.info {
+	@apply flex flex-col items-start gap-3;
+}
+.box {
+	@apply flex flex-col items-start gap-1.5;
+}
+.label {
+	@apply whitespace-nowrap;
+}
+.value {
+	word-break: break-all;
+}
+.roles {
+	@apply flex flex-wrap gap-1.5;
+}
+.role {
+	@apply font-medium text-small-lg btn-green rounded-sm py-1 px-1.5 font-nunito;
+}

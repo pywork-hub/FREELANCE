@@ -1,0 +1,5 @@
+mutation DuplicateService($id: Int!) {
+	duplicateService(id: $id) {
+		id
+	}
+}

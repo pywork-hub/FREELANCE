@@ -1,0 +1,3 @@
+mutation DeleteRoom($roomId: Int!) {
+	deleteRoom(roomId: $roomId)
+}

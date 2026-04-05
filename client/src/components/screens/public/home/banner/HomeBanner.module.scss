@@ -1,0 +1,64 @@
+.section {
+	@apply relative;
+
+	> img {
+		@apply absolute left-0 top-0 bottom-0 right-0 image-like-bg-cover;
+	}
+}
+.heading {
+	@apply mb-5 leading-md;
+}
+.wrapper {
+	@apply relative text-center py-24;
+}
+.text {
+	@apply text-lg mb-7;
+}
+.link {
+	@apply btn-green py-2.5 px-10 rounded-sm text-medium;
+}
+
+@media(max-width: 1300px) {
+	.wrapper {
+		@apply py-20;
+	}
+	.text {
+		@apply text-medium-xl mb-6;
+	}
+}
+
+@media(max-width: 1000px) {
+	.wrapper {
+		@apply py-16;
+	}
+	.text {
+		@apply text-medium-lg mb-5;
+	}
+	.link {
+		@apply text-base;
+	}
+}
+
+@media(max-width: 550px) {
+	.wrapper {
+		@apply py-12;
+	}
+	.text {
+		@apply text-medium;
+	}
+}
+
+@media(max-width: 400px) {
+	.wrapper {
+		@apply py-8;
+	}
+	.heading {
+		@apply mb-4;
+	}
+	.text {
+		@apply text-base;
+	}
+	.link {
+		@apply text-medium-md py-2 px-6;
+	}
+}

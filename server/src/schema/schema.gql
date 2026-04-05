@@ -1,0 +1,826 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Activity {
+  lastSeen: DateTime!
+  status: ActivityStatus!
+}
+
+enum ActivityStatus {
+  OFFLINE
+  ONLINE
+}
+
+input AddExampleInput {
+  name: String!
+  serviceId: Int!
+  url: String
+  userId: Int!
+}
+
+type AllAttributes {
+  attributes: [Attribute!]!
+  count: Int!
+}
+
+type AllCategories {
+  categories: [CatalogCategory!]!
+  count: Int!
+}
+
+type AllExamples {
+  count: Int!
+  examples: [Example!]!
+}
+
+type AllRequests {
+  count: Int!
+  requests: [Request!]!
+}
+
+type AllReviews {
+  count: Int!
+  reviews: [Review!]!
+}
+
+type AllServices {
+  count: Int!
+  services: [CatalogService!]!
+}
+
+type AllUsers {
+  count: Int!
+  users: [User!]!
+}
+
+type Analytics {
+  canceledOrdersCount: Int!
+  completedOrdersCount: Int!
+  expiredOrdersCount: Int!
+  inProcessOrdersCount: Int!
+  offlineUsersCount: Int!
+  onlineUsersCount: Int!
+  popularServices: [AnalyticsService!]!
+  refundedOrdersCount: Int!
+  topPurchasers: [AnalyticsPurchaser!]!
+  totalEarned: Int!
+}
+
+type AnalyticsPurchaser {
+  avatarPath: String!
+  login: String!
+  ordersAmount: Int!
+  ordersCount: Int!
+}
+
+input AnalyticsQueryInput {
+  duration: String!
+}
+
+type AnalyticsService {
+  categories: [String!]!
+  coverPath: String!
+  id: Int!
+  name: String!
+  orderTimes: Int!
+}
+
+type Attribute {
+  createdAt: DateTime!
+  id: Int!
+  name: String!
+  properties: [Property!]!
+  slug: String!
+  updatedAt: DateTime!
+}
+
+type AttributeInFilters {
+  name: String!
+  properties: [PropertyInFilter!]!
+  slug: String!
+}
+
+input AttributeInput {
+  name: String!
+  properties: [CreatableSelectInput!]!
+}
+
+type Block {
+  heading: String
+  items: [BlockItem!]!
+}
+
+input BlockInput {
+  heading: String
+  items: [BlockItemInput!]!
+}
+
+type BlockItem {
+  content: String!
+  heading: String
+}
+
+input BlockItemInput {
+  content: String!
+  heading: String
+}
+
+type Catalog {
+  block: Block
+  categories: [CatalogCategory!]!
+  categoryName: String
+  filters: Filters
+  seo: Seo
+}
+
+type CatalogCategory {
+  coverPath: String!
+  id: Int!
+  name: String!
+  slug: String!
+  visibility: Visibility!
+}
+
+input CatalogInput {
+  categoryInput: CategoryQueryInput!
+  categorySlug: String
+  serviceInput: ServiceQueryInput!
+}
+
+type CatalogService {
+  averageRating: Float!
+  categories: [SessionCategory!]!
+  coverPath: String!
+  excerpt: String!
+  fromPrice: Int!
+  fromSalePrice: Int
+  fromTerm: Int!
+  id: Int!
+  name: String!
+  properties: [FilterProperty!]!
+  reviews: [Review!]!
+  slug: String!
+  videoPath: String!
+  visibility: Visibility!
+}
+
+type Category {
+  block: Block
+  childrens: [Category!]!
+  coverPath: String!
+  createdAt: DateTime!
+  id: Int!
+  name: String!
+  orderTimes: Int!
+  parents: [Category!]!
+  seo: Seo
+  services: [Service!]!
+  slug: String!
+  updatedAt: DateTime!
+  visibility: Visibility!
+}
+
+input CategoryInput {
+  block: BlockInput
+  coverPath: String!
+  name: String!
+  parents: [SelectInput!]!
+  seo: SeoInput
+}
+
+input CategoryQueryInput {
+  isParents: Boolean
+  page: String
+  parentSlug: String
+  perPage: String
+  searchTerm: String
+  sort: Sort!
+  visibility: Visibility!
+}
+
+input ChangeRoomManagerInput {
+  managerId: Int!
+  roomId: Int!
+}
+
+input CreatableSelectInput {
+  name: String!
+  value: String!
+}
+
+input CreateFolderInput {
+  folderPath: String!
+  name: String!
+}
+
+type CurrentRoom {
+  id: Int!
+  messages: [RoomMessage!]!
+  partner: CurrentRoomPartner!
+}
+
+type CurrentRoomPartner {
+  activity: Activity!
+  id: Int!
+  profile: Profile!
+}
+
+type CurrentService {
+  reviewsCount: Int!
+  service: Service
+  similarServices: [CatalogService!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Example {
+  coverPath: String!
+  createdAt: DateTime!
+  id: Int!
+  imagePath: String!
+  name: String!
+  review: Review
+  service: Service
+  slug: String!
+  updatedAt: DateTime!
+  url: String
+  user: User
+  visibility: Visibility!
+}
+
+input ExampleInput {
+  coverPath: String!
+  imagePath: String!
+  name: String!
+  service: SelectInput
+  url: String
+  user: SelectInput
+}
+
+type FavoriteService {
+  slug: String!
+}
+
+type File {
+  createdAt: DateTime!
+  extension: String!
+  name: String!
+  path: String!
+  size: String!
+}
+
+type FilterAttribute {
+  name: String!
+}
+
+type FilterProperty {
+  attribute: FilterAttribute!
+  attributeId: Int!
+  name: String!
+  slug: String!
+}
+
+type Filters {
+  attributes: [AttributeInFilters!]!
+  maxPrice: Int!
+  maxTerm: Int!
+  minPrice: Int!
+  minTerm: Int!
+}
+
+type Folder {
+  count: Int!
+  createdAt: DateTime!
+  name: String!
+  path: String!
+  size: String!
+}
+
+type FolderWithChild {
+  childrens: [FolderWithChild!]!
+  createdAt: DateTime!
+  name: String!
+  path: String!
+}
+
+input JwtAuthConfirmationInput {
+  email: String!
+  login: String!
+  password: String!
+}
+
+input JwtAuthLoginInput {
+  loginOrEmail: String!
+  password: String!
+}
+
+input JwtAuthResetInput {
+  newPassword: String!
+  token: String!
+}
+
+input JwtAuthVerificationInput {
+  email: String!
+}
+
+type LastMessage {
+  content: String!
+  createdAt: DateTime!
+  id: Int!
+  isChecked: Boolean!
+  senderId: Int!
+  status: MessageStatus!
+  type: MessageType!
+  updatedAt: DateTime!
+}
+
+type Message {
+  content: String!
+  createdAt: DateTime!
+  id: Int!
+  isChecked: Boolean!
+  orderId: Int
+  room: Room!
+  roomId: Int!
+  sender: User!
+  senderId: Int!
+  status: MessageStatus!
+  type: MessageType!
+  updatedAt: DateTime!
+}
+
+input MessageActionInput {
+  action: MessageStatus!
+  content: String
+  messageId: Int
+  roomId: Int!
+}
+
+enum MessageStatus {
+  DELETED
+  EDITED
+  POSTED
+}
+
+enum MessageType {
+  MESSAGE
+  OFFER
+  ORDER_CANCELED
+  ORDER_COMPLETED
+  ORDER_EXPIRED
+  ORDER_IN_PROCESS
+  ORDER_REFUNDED
+  REVIEW_LEFT
+  REVIEW_OFFERED
+  SERVICE
+}
+
+type Mutation {
+  addExample(data: AddExampleInput!): Example!
+  changeRoomManager(data: ChangeRoomManagerInput!): Boolean!
+  checkMessages(messagesIds: [Int!]!, roomId: Int!): [Int!]!
+  createAttribute: Attribute!
+  createCategory: Category!
+  createExample: Example!
+  createFolder(data: CreateFolderInput!): String!
+  createOffer(data: OfferInput!): Message!
+  createReviewOffer(data: ReviewOfferInput!): Message!
+  createService: Service!
+  deleteAttribute(id: Int!): Attribute!
+  deleteCategory(id: Int!): Category!
+  deleteExample(id: Int!): Example!
+  deleteFileOrFolder(path: String!): String!
+  deleteRequest(id: Int!): Request!
+  deleteRoom(roomId: Int!): Boolean!
+  deleteService(id: Int!): Service!
+  deleteUser(id: Int!): User!
+  duplicateAttribute(id: Int!): Attribute!
+  duplicateCategory(id: Int!): Category!
+  duplicateExample(id: Int!): Example!
+  duplicateService(id: Int!): Service!
+  jwtConfirmation(data: JwtAuthConfirmationInput!): Boolean!
+  jwtLogin(data: JwtAuthLoginInput!): SessionUserResponse!
+  jwtReset(data: JwtAuthResetInput!): Boolean!
+  jwtVerification(data: JwtAuthVerificationInput!): Boolean!
+  leftReview(data: ReviewInput!): Message!
+  logout: Boolean!
+  messageAction(data: MessageActionInput!): Message!
+  messages(query: QueryInput!, roomId: Int!): [RoomMessage!]!
+  orderAction(data: OrderActionInput!): Message!
+  orderService(data: ServiceOrderInput!): Message!
+  sendNewsletter(data: NewsletterInput!): Boolean!
+  sendRequest(data: RequestInput!): Request!
+  toggleCategory(id: Int!): Category!
+  toggleExample(id: Int!): Example!
+  toggleFavorite(serviceSlug: String!): SessionUserResponse!
+  toggleService(id: Int!): Service!
+  toggleTyping(data: TypingInput!): Boolean!
+  updateAttribute(data: AttributeInput!, id: Int!): Attribute!
+  updateCategory(data: CategoryInput!, id: Int!): Category!
+  updateExample(data: ExampleInput!, id: Int!): Example!
+  updatePage(data: PageInput!, type: PageType!): Boolean!
+  updateProfile(data: ProfileInput!): SessionUserResponse!
+  updateService(data: ServiceInput!, id: Int!): Service!
+  updateUser(data: UserInput!, id: Int!): User!
+  uploadFiles(data: UploadFilesInput!): String!
+}
+
+input NewsletterInput {
+  emails: [CreatableSelectInput!]
+  file: Upload!
+  subject: String!
+}
+
+input OfferInput {
+  description: String!
+  name: String!
+  price: Int!
+  roomId: Int!
+  term: Int!
+}
+
+type OpenGraphs {
+  description: String!
+  images: [OpenGraphsImage!]!
+  title: String!
+}
+
+type OpenGraphsImage {
+  alt: String!
+  url: String!
+}
+
+input OpenGraphsImageInput {
+  alt: String!
+  url: String!
+}
+
+input OpenGraphsInput {
+  description: String!
+  images: [OpenGraphsImageInput!]!
+  title: String!
+}
+
+type Order {
+  createdAt: DateTime!
+  description: String!
+  id: Int!
+  name: String!
+  partner: Profile!
+  status: OrderStatus!
+  term: Int!
+  termUpdatedAt: DateTime!
+  total: Int!
+}
+
+input OrderActionInput {
+  managerId: Int!
+  orderId: Int!
+  term: Int
+  type: String!
+  userId: Int!
+}
+
+enum OrderStatus {
+  CANCELED
+  COMPLETED
+  EXPIRED
+  IN_PROCESS
+  PENDING
+  REFUNDED
+}
+
+type Page {
+  block: Block
+  seo: Seo
+}
+
+input PageInput {
+  block: BlockInput
+  seo: SeoInput
+}
+
+enum PageType {
+  HOME
+  MARKET
+}
+
+type Profile {
+  avatarPath: String!
+  createdAt: DateTime!
+  email: String!
+  id: Int!
+  login: String!
+  updatedAt: DateTime!
+  user: User!
+  userId: Int!
+}
+
+input ProfileInput {
+  avatarFile: Upload
+  login: String!
+}
+
+type Property {
+  attribute: Attribute!
+  attributeId: Int!
+  createdAt: DateTime!
+  id: Int!
+  name: String!
+  services: [Service!]!
+  slug: String!
+  updatedAt: DateTime!
+}
+
+type PropertyInFilter {
+  name: String!
+  slug: String!
+}
+
+type Query {
+  analytics(query: AnalyticsQueryInput!): Analytics!
+  attributeById(id: Int!): Attribute!
+  attributes(query: QueryInput!): AllAttributes!
+  catalog(data: CatalogInput!): Catalog!
+  categories(query: CategoryQueryInput!): AllCategories!
+  categoryById(id: Int!): Category!
+  currentRoom(partnerLogin: String!, query: QueryInput!): CurrentRoom
+  currentService(slug: String!): CurrentService!
+  exampleById(id: Int!): Example!
+  examples(query: QueryFullestInput!): AllExamples!
+  folderItems(folderPath: String!): StorageItem!
+  folders: [FolderWithChild!]!
+  jwtRegister(token: String!): SessionUserResponse!
+  notificationMessages: [Message!]!
+  orders(query: QueryInput!): [Order!]!
+  otherManagers: [User!]!
+  page(type: PageType!): Page!
+  pageBlock(type: PageType!): Block
+  pageSeo(type: PageType!): Seo
+  properties: [Property!]!
+  requestById(id: Int!): Request!
+  requests(query: QueryInput!): AllRequests!
+  reviews(query: QueryInput!, slug: String!): AllReviews!
+  serviceById(id: Int!): Service!
+  services(categorySlug: String, query: ServiceQueryInput!): AllServices!
+  userById(id: Int!): User!
+  userFavorites(query: ServiceQueryInput!): AllServices!
+  userRooms(query: QueryInput!): [UserRoom!]!
+  users(query: QueryInput!): AllUsers!
+}
+
+input QueryFullestInput {
+  page: String
+  perPage: String
+  searchTerm: String
+  sort: Sort!
+  visibility: Visibility!
+}
+
+input QueryInput {
+  page: String
+  perPage: String
+  searchTerm: String
+  sort: Sort!
+}
+
+type Request {
+  createdAt: DateTime!
+  email: String!
+  firstName: String!
+  id: Int!
+  lastName: String!
+  message: String!
+}
+
+input RequestInput {
+  email: String!
+  firstName: String!
+  lastName: String!
+  message: String!
+}
+
+type Review {
+  comment: String!
+  createdAt: DateTime!
+  id: Int!
+  rating: Int!
+  user: SessionUser!
+}
+
+input ReviewInput {
+  comment: String!
+  rating: Int!
+  roomId: Int!
+  serviceId: Int!
+}
+
+input ReviewOfferInput {
+  roomId: Int!
+  serviceId: Int!
+}
+
+type Room {
+  createdAt: DateTime!
+  id: Int!
+  messages: [Message!]!
+  updatedAt: DateTime!
+  users: [User!]!
+}
+
+type RoomMessage {
+  content: String!
+  createdAt: DateTime!
+  id: Int!
+  isChecked: Boolean!
+  sender: User!
+  status: MessageStatus!
+  type: MessageType!
+  updatedAt: DateTime!
+}
+
+input SelectInput {
+  name: String!
+  value: Int!
+}
+
+input SelectUserRoleInput {
+  name: String!
+  value: String!
+}
+
+type Seo {
+  description: String!
+  graphs: OpenGraphs
+  keywords: [String!]!
+  title: String!
+}
+
+input SeoInput {
+  description: String!
+  graphs: OpenGraphsInput
+  keywords: [CreatableSelectInput!]!
+  title: String!
+}
+
+type Service {
+  averageRating: Float!
+  cartUsers: [User!]!
+  categories: [Category!]!
+  coverPath: String!
+  createdAt: DateTime!
+  description: String!
+  examples: [Example!]!
+  excerpt: String!
+  favoriteUsers: [User!]!
+  fromPrice: Int!
+  fromSalePrice: Int
+  fromTerm: Int!
+  id: Int!
+  name: String!
+  orderTimes: Int!
+  properties: [Property!]!
+  reviews: [Review!]!
+  seo: Seo
+  slug: String!
+  updatedAt: DateTime!
+  videoPath: String!
+  visibility: Visibility!
+}
+
+input ServiceInput {
+  categories: [SelectInput!]!
+  coverPath: String!
+  description: String!
+  examples: [SelectInput!]!
+  excerpt: String!
+  fromPrice: Int!
+  fromSalePrice: Int
+  fromTerm: Int!
+  name: String!
+  properties: [SelectInput!]!
+  seo: SeoInput
+  videoPath: String!
+}
+
+input ServiceOrderInput {
+  quantity: Int!
+  serviceSlug: String!
+}
+
+input ServiceQueryInput {
+  maxPrice: String
+  maxTerm: String
+  minPrice: String
+  minTerm: String
+  orderTimes: String
+  page: String
+  perPage: String
+  properties: [String!]
+  searchTerm: String
+  sort: Sort!
+  visibility: Visibility!
+}
+
+type SessionCategory {
+  name: String!
+  slug: String!
+}
+
+type SessionProfile {
+  avatarPath: String!
+  email: String!
+  login: String!
+}
+
+type SessionUser {
+  favorites: [FavoriteService!]!
+  id: Int!
+  profile: SessionProfile!
+  roles: [UserRole!]!
+}
+
+type SessionUserResponse {
+  user: SessionUser!
+}
+
+enum Sort {
+  ASC
+  DESC
+}
+
+type StorageItem {
+  files: [File!]!
+  folders: [Folder!]!
+}
+
+type Subscription {
+  checkedMessage(roomId: Int!, userId: Int!): [Int!]
+  roomMessages(roomId: Int!): Message
+  userActivity(userId: Int!): Activity
+  userNotification(userId: Int!): Message
+  userTyping(roomId: Int!, userId: Int!): Typing
+}
+
+type TelegramBot {
+  chatId: String!
+  token: String!
+}
+
+input TelegramBotInput {
+  chatId: String!
+  token: String!
+}
+
+type Typing {
+  isPartnerTyping: Boolean!
+}
+
+input TypingInput {
+  isTyping: Boolean!
+  roomId: Int!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input UploadFilesInput {
+  data: [Upload!]!
+  folderPath: String!
+}
+
+type User {
+  bots: [TelegramBot!]!
+  createdAt: DateTime!
+  id: Int!
+  profile: Profile!
+  reviews: [Review!]
+  roles: [UserRole!]!
+  updatedAt: DateTime!
+}
+
+input UserInput {
+  bots: [TelegramBotInput!]!
+  roles: [SelectUserRoleInput!]!
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  USER
+}
+
+type UserRoom {
+  id: Int!
+  lastMessage: LastMessage
+  partner: CurrentRoomPartner!
+}
+
+enum Visibility {
+  HIDDEN
+  VISIBLE
+}

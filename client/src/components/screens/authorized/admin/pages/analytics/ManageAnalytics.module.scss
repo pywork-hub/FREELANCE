@@ -1,0 +1,63 @@
+.table,
+.card {
+	@apply bg-gray-base;
+}
+.table {
+	width: calc(50% - 16px);
+}
+.purchasers {
+	img {
+		@apply rounded-full object-center object-cover;
+		min-width: 40px;
+		min-height: 40px;
+		max-width: 40px;
+		max-height: 40px;
+	}
+}
+.services {
+	img {
+		@apply rounded-sm object-center object-cover;
+		min-width: 50px;
+		min-height: 40px;
+		max-width: 50px;
+		max-height: 40px;
+	}
+}
+.card {
+	width: calc(25% - 24px);
+}
+.fill {
+	@apply flex flex-wrap gap-8 mt-8;
+}
+.online,
+.offline {
+	@apply w-5 h-5 rounded-full;
+}
+.online {
+	@apply bg-green-400;
+}
+.offline {
+	@apply bg-red-400;
+}
+.inProcess,
+.completed,
+.canceled,
+.expired,
+.refunded {
+	@apply block py-1.5 px-4 rounded-sm text-white text-medium-sm;
+}
+.inProcess {
+	@apply bg-blue-400;
+}
+.completed {
+	@apply bg-green-base;
+}
+.expired {
+	@apply bg-orange-400;
+}
+.canceled {
+	@apply bg-red-400;
+}
+.refunded {
+	@apply bg-pink-400;
+}

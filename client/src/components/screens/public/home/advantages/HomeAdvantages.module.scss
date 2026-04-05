@@ -1,0 +1,39 @@
+.section {
+	@apply py-14;
+}
+.heading {
+	@apply mb-7 leading-md;
+}
+.advantages {
+	@apply flex flex-wrap gap-5;
+}
+.advantage {
+	max-width: calc(50% - 10px);
+}
+
+@media (max-width: 800px) {
+	.advantages {
+		@apply gap-3;
+	}
+	.advantage {
+		@apply max-w-full;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-10;
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply py-8;
+	}
+}
+
+@media (max-width: 480px) {
+	.heading {
+		@apply mb-5;
+	}
+}

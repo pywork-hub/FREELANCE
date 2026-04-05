@@ -1,0 +1,24 @@
+query Page($type: PageType!) {
+	page(type: $type) {
+		block {
+			heading
+			items {
+				heading
+				content
+			}
+		}
+		seo {
+			title
+			description
+			keywords
+			graphs {
+				title
+				description
+				images {
+					url
+					alt
+				}
+			}
+		}
+	}
+}

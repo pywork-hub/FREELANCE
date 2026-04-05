@@ -1,0 +1,26 @@
+query UserRooms($query: QueryInput!) {
+	userRooms(query: $query) {
+		id
+		partner {
+			id
+			profile {
+				login
+				avatarPath
+			}
+			activity {
+				status
+				lastSeen
+			}
+		}
+		lastMessage {
+			id
+			content
+			senderId
+			type
+			isChecked
+			type
+			status
+			createdAt
+		}
+	}
+}

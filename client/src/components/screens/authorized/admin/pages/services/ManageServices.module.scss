@@ -1,0 +1,7 @@
+.services {
+	@apply flex flex-wrap gap-5;
+}
+.service {
+	@apply relative;
+	max-width: calc(100% / 5 - 16px);
+}

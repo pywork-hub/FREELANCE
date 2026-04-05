@@ -1,0 +1,271 @@
+.order {
+	@apply overflow-hidden relative px-7 py-5 border-b border-gray-300 flex items-center gap-5 transition-colors leading-md hover:bg-gray-150/70;
+
+	&:first-child {
+		@apply border-b border-t;
+	}
+
+	&:last-child {
+		@apply border-b-0;
+	}
+
+	&:hover {
+		.actions {
+			@apply animate-slideFromLeft;
+		}
+	}
+}
+.timer {
+	@apply flex items-center gap-1;
+}
+.partner {
+	@apply flex items-center gap-3;
+
+	> img {
+		@apply image-like-bg-cover rounded-full;
+		min-width: 32px;
+		min-height: 32px;
+		max-width: 32px;
+		max-height: 32px;
+	}
+}
+.orderStatus {
+	@apply w-full text-center text-medium-md;
+
+	> span {
+		@apply inline-block max-w-full px-3.5 py-1.5 rounded-sm text-white;
+	}
+
+	&.blue {
+		> span {
+			@apply bg-blue-400;
+		}
+	}
+
+	&.green {
+		> span {
+			@apply bg-green-base;
+		}
+	}
+
+	&.orange {
+		> span {
+			@apply bg-orange-400;
+		}
+	}
+
+	&.red {
+		> span {
+			@apply bg-red-400;
+		}
+	}
+
+	&.pink {
+		> span {
+			@apply bg-pink-400;
+		}
+	}
+}
+.number {
+	@apply text-green-400;
+}
+.price {
+	@apply text-center;
+}
+.partner,
+.name {
+	@apply text-medium-md;
+	word-break: break-all;
+	width: 21%;
+}
+.created,
+.term {
+	@apply font-nunito text-small-xl flex justify-end;
+	width: 12%;
+
+	> div {
+		@apply w-fit flex flex-col items-center gap-1;
+	}
+}
+.price {
+	width: 10%;
+}
+.number,
+.orderStatus {
+	width: 15%;
+}
+.actions {
+	@apply -translate-x-full absolute left-0 top-0 bottom-0 h-full border-r border-gray-300 flex items-center gap-3 bg-white px-3 py-2;
+
+	> span {
+		@apply text-medium-sm;
+	}
+}
+.action {
+	@apply up-hover;
+}
+.cancel {
+	@apply text-red-400;
+}
+.complete {
+	@apply text-green-base;
+}
+.inProcess {
+	@apply text-blue-400;
+}
+.refund {
+	@apply text-pink-400;
+}
+.yes,
+.no {
+	@apply py-2 px-5 rounded-sm;
+}
+.yes {
+	@apply btn-green;
+}
+.no {
+	@apply btn-red;
+}
+.buttons {
+	@apply flex justify-center gap-2;
+}
+.submitWrapper {
+	@apply text-center mt-5;
+}
+.submit {
+	@apply btn-green rounded-sm py-2 px-6;
+}
+.field {
+	> div {
+		@apply flex-wrap;
+
+		> div {
+			width: calc(50% - 6px);
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+	.order {
+		@apply w-full flex-wrap items-stretch bg-white rounded-sm gap-y-1.5 gap-x-0 justify-between px-5 py-4 border border-gray-300;
+		max-width: calc(50% - 8px);
+	}
+	.price,
+	.number,
+	.actions,
+	.name,
+	.created,
+	.orderStatus {
+		@apply w-full;
+	}
+	.partner,
+	.name {
+		@apply text-base;
+	}
+	.number {
+		@apply text-medium-lg;
+		order: 1;
+	}
+	.term {
+		order: 2;
+	}
+	.name {
+		order: 3;
+	}
+	.created {
+		@apply justify-start;
+		order: 4;
+	}
+	.term,
+	.created {
+		@apply text-gray-800/60;
+
+		> div {
+			@apply flex-row;
+		}
+	}
+	.partner {
+		@apply pr-1.5;
+		order: 6;
+		width: 70%;
+	}
+	.price {
+		@apply pl-1.5 flex items-center justify-end;
+		order: 7;
+		width: 30%;
+	}
+	.orderStatus {
+		@apply text-right;
+		order: 5;
+
+		> span {
+			@apply w-fit px-4;
+		}
+	}
+	.created,
+	.orderStatus {
+		max-width: calc(50% - 10px);
+	}
+	.term,
+	.number {
+		@apply w-fit;
+	}
+	.partner,
+	.price {
+		@apply border-t border-gray-300 pt-2.5 mt-1;
+	}
+	.actions {
+		@apply border-b h-fit w-fit bottom-auto px-2.5 flex-col rounded-br-sm;
+	}
+}
+
+@media (max-width: 800px) {
+	.field {
+		label {
+			@apply text-base;
+		}
+	}
+	.order {
+		@apply max-w-full;
+	}
+}
+@media (max-width: 550px) {
+	.field {
+		label {
+			@apply text-medium-md;
+		}
+	}
+	.actions {
+		@apply px-2;
+	}
+	.action {
+		> svg {
+			width: 22px;
+			height: 22px;
+		}
+	}
+	.created {
+		max-width: 60%;
+	}
+	.orderStatus {
+		max-width: 40%;
+	}
+	.order {
+		@apply gap-y-1;
+	}
+	.partner,
+	.name,
+	.price {
+		@apply text-medium-md;
+	}
+	.orderStatus {
+		@apply text-medium-sm;
+	}
+	.number {
+		@apply text-medium;
+	}
+	.created,
+	.term {
+		@apply text-small-lg;
+	}
+}

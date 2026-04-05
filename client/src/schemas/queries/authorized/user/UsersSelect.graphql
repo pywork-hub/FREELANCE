@@ -1,0 +1,11 @@
+query UsersSelect($query: QueryInput!) {
+	users(query: $query) {
+		users {
+			id
+			profile {
+				login
+				email
+			}
+		}
+	}
+}

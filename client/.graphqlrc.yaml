@@ -1,0 +1,14 @@
+schema:
+  - ${GRAPHQL_SERVER_URL: "https://back.domain.com/api/mygraphql"}
+documents:
+  - 'src/schemas/**/*.graphql'
+extensions:
+  codegen:
+    generates:
+      ./src/__generated__/output.ts:
+        plugins:
+          - typescript
+          - typescript-operations:
+              skipTypename: true
+          - typescript-react-apollo:
+              withHooks: true

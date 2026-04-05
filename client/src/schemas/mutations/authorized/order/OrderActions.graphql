@@ -1,0 +1,16 @@
+mutation OrderAction($data: OrderActionInput!) {
+	orderAction(data: $data) {
+		id
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		orderId
+		roomId
+		type
+		createdAt
+	}
+}

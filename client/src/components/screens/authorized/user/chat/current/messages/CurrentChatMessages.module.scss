@@ -1,0 +1,43 @@
+.wrapper {
+	@apply w-full h-full flex items-end overflow-hidden;
+}
+.messages {
+	@apply w-full h-full overflow-y-auto overflow-x-hidden flex flex-col-reverse text-medium-md;
+	scrollbar-color: #14a800 #E0E0E0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}
+.date {
+	@apply relative py-4 w-full text-center;
+
+	&::before {
+		@apply absolute w-full left-0 right-0 top-0 bottom-0 my-auto bg-gray-300;
+		content: '';
+		height: 1px;
+	}
+
+	& > span {
+		@apply relative font-nunito text-medium-sm bg-white px-3;
+	}
+}
+
+@media(max-width: 550px) {
+	.date {
+		@apply py-3;
+
+		& > span {
+			@apply text-small-xl;
+		}
+	}
+}

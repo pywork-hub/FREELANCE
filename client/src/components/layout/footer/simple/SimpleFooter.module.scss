@@ -1,0 +1,47 @@
+.footer {
+	@apply bg-gray-900 text-white;
+}
+.fill {
+	@apply flex items-center justify-between gap-10 py-5 px-3 border-t border-solid border-gray-500;
+}
+.list {
+	@apply flex gap-3;
+}
+.buttons {
+	@apply flex gap-3;
+}
+.button {
+	@apply up-hover;
+}
+.soon {
+	@apply leading-2lg;
+
+	> h3 {
+		@apply text-green-400 mb-1;
+	}
+}
+
+@media (max-width: 1200px) {
+	.button {
+		> img {
+			max-width: 120px;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.soon {
+		@apply text-medium-md;
+	}
+}
+
+@media (max-width: 430px) {
+	.button {
+		> img {
+			max-width: 110px;
+		}
+	}
+	.fill {
+		@apply flex-col items-start gap-5;
+	}
+}

@@ -1,0 +1,13 @@
+mutation CreateOffer($data: OfferInput!) {
+	createOffer(data: $data) {
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		type
+		status
+	}
+}

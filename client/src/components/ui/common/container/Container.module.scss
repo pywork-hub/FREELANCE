@@ -1,0 +1,11 @@
+.container {
+	@apply w-full h-full mx-auto;
+	padding: 0 25px;
+	max-width: 1290px;
+}
+
+@media(max-width: 700px) {
+	.container {
+		@apply px-4;
+	}
+}

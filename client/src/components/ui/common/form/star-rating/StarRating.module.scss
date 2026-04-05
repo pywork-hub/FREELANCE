@@ -1,0 +1,30 @@
+.stars {
+	@apply flex cursor-pointer w-fit;
+}
+.btn {
+	@apply px-0.5;
+
+	> svg {
+		@apply fill-gray-400 stroke-gray-400 transition-colors;
+	}
+
+	&.filled {
+		> svg {
+			@apply fill-yellow-400 stroke-yellow-400;
+		}
+	}
+}
+.star {
+	&:first-child .btn {
+		@apply pl-0;
+	}
+	&:last-child .btn {
+		@apply pr-0;
+	}
+}
+
+@media (max-width: 550px) {
+	.btn > svg {
+		@apply w-5 h-5;
+	}
+}

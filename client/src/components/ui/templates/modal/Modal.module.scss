@@ -1,0 +1,76 @@
+.overlay {
+	@apply w-screen h-screen fixed top-0 bottom-0 left-0 right-0 bg-black/75 flex justify-center items-center z-5 animate-opacity;
+}
+.window {
+	@apply w-full flex flex-col relative rounded-sm bg-white animate-windowTransform;
+	max-height: 90%;
+	margin: 0 25px;
+
+	&.small {
+		max-width: 320px;
+	}
+
+	&.medium {
+		max-width: 420px;
+	}
+
+	&.large {
+		max-width: 600px;
+	}
+
+	&.extraLarge {
+		max-width: 1000px;
+	}
+}
+.fill {
+	@apply h-full py-8 px-5 overflow-y-auto overflow-x-hidden;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}
+.top {
+	@apply py-5 flex items-center justify-between gap-10 px-5;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.13), 0 12px 16px rgba(0, 0, 0, 0.05);
+}
+.heading {
+	@apply text-4lg font-medium text-gray-900;
+}
+.close {
+	@apply text-gray-base green-hover;
+
+	> svg {
+		@apply w-5 h-5;
+	}
+}
+
+@media (max-width: 1000px) {
+	.heading {
+		@apply text-lg;
+	}
+	.top {
+		@apply py-4;
+	}
+	.fill {
+		@apply py-6;
+	}
+}
+
+@media (max-width: 550px) {
+	.heading {
+		@apply text-medium-xl;
+	}
+	.fill {
+		@apply py-5 text-medium-md;
+	}
+}

@@ -1,0 +1,12 @@
+.list {
+	@apply flex gap-3 px-4 mt-3;
+}
+.link {
+	@apply w-full border-2 border-solid border-transparent px-7 py-2.5 rounded-sm transition-colors text-medium-md;
+}
+.login {
+	@apply btn-green;
+}
+.register {
+	@apply btn-green-border text-white;
+}

@@ -1,0 +1,45 @@
+.list {
+	@apply flex gap-3;
+}
+.link {
+	@apply w-full border-2 border-solid border-transparent px-10 pb-2.5 pt-3 rounded-sm transition-colors;
+}
+.login {
+	@apply btn-green;
+}
+.register,
+.auth {
+	@apply btn-green-border text-white;
+}
+.auth {
+	@apply hidden;
+}
+
+@media (max-width: 900px) {
+	.list {
+		@apply min-w-fit;
+	}
+	.link {
+		@apply text-medium-md px-7 py-2.5;
+	}
+}
+
+@media (max-width: 650px) {
+	.auth {
+		@apply inline-block;
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+	.item {
+		&:first-child,
+		&:nth-child(2) {
+			@apply hidden;
+		}
+	}
+}
+
+@media (max-width: 440px) {
+	.auth {
+		@apply py-2;
+	}
+}

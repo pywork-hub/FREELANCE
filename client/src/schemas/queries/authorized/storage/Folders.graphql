@@ -1,0 +1,52 @@
+query Folders {
+	folders {
+		name
+		path
+		childrens {
+			name
+			path
+			childrens {
+				name
+				path
+				childrens {
+					name
+					path
+					childrens {
+						name
+						path
+						childrens {
+							name
+							path
+							childrens {
+								name
+								path
+								childrens {
+									name
+									path
+									childrens {
+										name
+										path
+										childrens {
+											name
+											path
+											createdAt
+										}
+										createdAt
+									}
+									createdAt
+								}
+								createdAt
+							}
+							createdAt
+						}
+						createdAt
+					}
+					createdAt
+				}
+				createdAt
+			}
+			createdAt
+		}
+		createdAt
+	}
+}

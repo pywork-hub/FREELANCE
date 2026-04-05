@@ -1,0 +1,37 @@
+query ServiceById($id: Int!) {
+	serviceById(id: $id) {
+		name
+		fromTerm
+		fromPrice
+		fromSalePrice
+		examples {
+			id
+			name
+		}
+		categories {
+			id
+			name
+		}
+		properties {
+			id
+			name
+		}
+		excerpt
+		description
+		coverPath
+		videoPath
+		seo {
+			title
+			description
+			keywords
+			graphs {
+				title
+				description
+				images {
+					url
+					alt
+				}
+			}
+		}
+	}
+}

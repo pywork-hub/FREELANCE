@@ -1,0 +1,135 @@
+.section {
+	@apply py-16;
+}
+.heading {
+	@apply mb-6;
+}
+.form {
+	@apply flex flex-wrap gap-5;
+}
+.field.third {
+	max-width: calc(100% / 3 - 14px);
+}
+.field.half {
+	max-width: calc(50% - 10px);
+}
+.field > input,
+.textarea > textarea {
+	@apply bg-transparent border-2 border-green-base text-gray-base;
+}
+.textarea {
+	> textarea {
+		@apply leading-3lg resize-none overflow-y-auto;
+		min-height: 183px;
+		scrollbar-color: #14a800 #e0e0e0;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			@apply w-2 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply w-full bg-gray-300 rounded-lg;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply w-full bg-green-base rounded-lg;
+		}
+	}
+}
+.sendWrapper {
+	@apply flex justify-center;
+}
+.loader {
+	@apply mx-auto;
+
+	> svg {
+		@apply w-7 h-7;
+	}
+}
+.send {
+	@apply btn-green py-3.5 px-7 rounded-sm;
+}
+.description {
+	@apply leading-3lg mb-7 text-medium;
+
+	> span {
+		@apply text-green-400;
+	}
+}
+
+@media (max-width: 1200px) {
+	.description {
+		@apply text-base;
+	}
+}
+
+@media (max-width: 1000px) {
+	.heading {
+		@apply mb-5;
+	}
+	.description {
+		@apply mb-6;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-12;
+	}
+	.field > input,
+	.textarea > textarea {
+		@apply text-medium-md;
+
+		&::placeholder {
+			@apply text-medium-md;
+		}
+	}
+	.form {
+		@apply gap-4;
+	}
+	.field.third,
+	.field.half {
+		@apply max-w-full;
+	}
+	.send {
+		@apply py-3 px-6;
+	}
+}
+
+@media (max-width: 550px) {
+	.description {
+		@apply mb-5;
+	}
+	.field,
+	.textarea {
+		> label {
+			@apply text-medium-md;
+		}
+	}
+	.field > input,
+	.textarea > textarea {
+		@apply py-2.5;
+	}
+	.section {
+		@apply py-10;
+	}
+	.description {
+		@apply text-medium-md;
+	}
+	.send {
+		@apply py-2.5 px-5 text-medium-md;
+	}
+	.form {
+		@apply gap-3;
+	}
+}
+
+@media (max-width: 400px) {
+	.heading {
+		@apply mb-4;
+	}
+	.description {
+		@apply text-medium-sm;
+	}
+}

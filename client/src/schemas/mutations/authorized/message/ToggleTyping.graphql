@@ -1,0 +1,3 @@
+mutation ToggleTyping($data: TypingInput!) {
+	toggleTyping(data: $data)
+}

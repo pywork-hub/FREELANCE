@@ -1,0 +1,44 @@
+.section {
+	@apply py-14 bg-gray-900/10 flex-1;
+}
+.heading {
+	@apply mb-6 text-center;
+}
+.form {
+	@apply mx-auto w-full px-7 py-10 border border-gray-300 rounded-md flex items-center justify-center flex-wrap gap-5 bg-white;
+	max-width: 500px;
+}
+.avatar {
+	@apply w-fit text-center;
+}
+.updateWrapper {
+	@apply text-center;
+}
+.update {
+	@apply px-8 py-2.5 btn-green rounded-sm;
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply py-10;
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply py-8;
+	}
+}
+
+@media(max-width: 400px) {
+	.field,
+	.update {
+		@apply text-medium-md;
+	}
+	.form {
+		@apply px-6 py-7 gap-4;
+	}
+	.heading {
+		@apply mb-5;
+	}
+}

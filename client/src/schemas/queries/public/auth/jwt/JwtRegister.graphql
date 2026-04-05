@@ -1,0 +1,16 @@
+query JwtRegister($token: String!) {
+	jwtRegister(token: $token) {
+		user {
+			id
+			profile {
+				email
+				login
+				avatarPath
+			}
+			favorites {
+				slug
+			}
+			roles
+		}
+	}
+}

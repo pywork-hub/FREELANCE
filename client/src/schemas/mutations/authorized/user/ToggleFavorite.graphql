@@ -1,0 +1,16 @@
+mutation ToggleFavorite($serviceSlug: String!) {
+	toggleFavorite(serviceSlug: $serviceSlug) {
+		user {
+			id
+			profile {
+				email
+				login
+				avatarPath
+			}
+			favorites {
+				slug
+			}
+			roles
+		}
+	}
+}

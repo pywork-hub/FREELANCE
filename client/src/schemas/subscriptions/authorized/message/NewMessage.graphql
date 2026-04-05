@@ -1,0 +1,18 @@
+subscription NewMessage($roomId: Int!) {
+	roomMessages(roomId: $roomId) {
+		id
+		sender {
+			id
+			profile {
+				login
+				avatarPath
+			}
+		}
+		type
+		content
+		isChecked
+		status
+		updatedAt
+		createdAt
+	}
+}

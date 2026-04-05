@@ -1,0 +1,18 @@
+mutation OrderService($data: ServiceOrderInput!) {
+	orderService(data: $data) {
+		content
+		sender {
+			profile {
+				login
+				avatarPath
+			}
+		}
+		room {
+			users {
+				profile {
+					login
+				}
+			}
+		}
+	}
+}

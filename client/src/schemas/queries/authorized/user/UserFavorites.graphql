@@ -1,0 +1,19 @@
+query UserFavorites($query: ServiceQueryInput!) {
+	userFavorites(query: $query) {
+		services {
+			name
+			slug
+			fromPrice
+			fromSalePrice
+			fromTerm
+			excerpt
+			coverPath
+			videoPath
+			categories {
+				name
+				slug
+			}
+		}
+		count
+	}
+}

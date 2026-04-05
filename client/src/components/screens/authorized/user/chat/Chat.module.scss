@@ -1,0 +1,26 @@
+.chat {
+	@apply my-8 max-h-screen;
+	min-height: 700px;
+	flex: 1 1 0;
+}
+.wrapper {
+	@apply h-full flex border border-gray-300 rounded-sm;
+
+	input {
+		@apply rounded-sm;
+	}
+}
+
+@media (max-width: 1000px) {
+	.chat {
+		min-height: 600px;
+	}
+}
+
+@media (max-width: 800px) {
+	.chat {
+		max-height: 65vh;
+		min-height: 65vh;
+		height: 65vh;
+	}
+}

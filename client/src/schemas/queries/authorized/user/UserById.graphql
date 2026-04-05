@@ -1,0 +1,12 @@
+query UserById($id: Int!) {
+	userById(id: $id) {
+		profile {
+			login
+		}
+		bots {
+			token
+			chatId
+		}
+		roles
+	}
+}

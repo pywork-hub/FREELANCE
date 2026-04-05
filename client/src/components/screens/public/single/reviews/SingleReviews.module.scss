@@ -1,0 +1,99 @@
+.section {
+	@apply mt-12;
+}
+.wrapper {
+	@apply pt-10 border-t border-gray-300;
+}
+.top {
+	@apply flex items-center justify-between gap-10 mb-8;
+}
+.how {
+	@apply leading-3lg;
+
+	> span {
+		@apply text-green-400;
+	}
+}
+.add {
+	@apply rounded-sm btn-green py-2.5 px-9;
+}
+.reviews {
+	@apply flex gap-5 px-3 pt-3 -mx-3;
+}
+.review {
+	min-width: calc(100% / 3 - 14px);
+	max-width: calc(100% / 3 - 14px);
+}
+.more {
+	@apply block mt-7 mx-auto w-fit px-8 py-2.5 rounded-sm btn-green;
+}
+
+@media (max-width: 1200px) {
+	.review > div:first-child {
+		@apply flex-col;
+	}
+	.top {
+		@apply mb-6;
+	}
+	.add {
+		@apply px-7;
+	}
+}
+
+@media (max-width: 850px) {
+	.top {
+		@apply mb-4;
+	}
+	.reviews {
+		@apply flex-col;
+	}
+	.review {
+		@apply min-w-full max-w-full;
+
+		> div:first-child {
+			@apply flex-row;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		@apply mt-10;
+	}
+	.add {
+		@apply px-6 text-medium-md;
+	}
+}
+
+@media (max-width: 550px) {
+	.section {
+		@apply mt-8;
+	}
+	.wrapper {
+		@apply pt-8;
+	}
+	.add {
+		@apply py-2 px-5 text-medium-sm;
+	}
+	.more {
+		@apply mt-4 px-5 text-medium-sm py-2;
+	}
+	.top {
+		@apply mb-2;
+	}
+	.reviews {
+		@apply gap-4;
+	}
+}
+
+@media (max-width: 400px) {
+	.wrapper {
+		@apply pt-6;
+	}
+}
+
+@media (max-width: 350px) {
+	.add {
+		@apply px-2.5;
+	}
+}

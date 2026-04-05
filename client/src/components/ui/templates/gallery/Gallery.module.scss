@@ -1,0 +1,99 @@
+.window {
+	@apply w-screen h-screen fixed top-0 bottom-0 left-0 right-0 bg-black/75 flex justify-center items-center z-5 invisible transition-all;
+
+	&.active {
+		@apply visible opacity-100;
+	}
+}
+.fill {
+	@apply w-full h-full flex items-center gap-5 justify-between;
+	max-width: 90%;
+	max-height: 90%;
+}
+.slide {
+	@apply relative w-full h-full overflow-x-hidden overflow-y-auto;
+	max-width: 1400px;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}
+.image {
+	@apply hidden object-cover object-center transition-opacity;
+
+	&.active {
+		@apply block;
+	}
+}
+.close {
+	@apply absolute z-1 right-5 top-5 text-white green-hover;
+
+	> svg {
+		@apply w-8 h-8;
+	}
+}
+.arrow {
+	@apply min-w-10 min-h-10 flex items-center justify-center bg-white rounded-full black-shadow light-green-bg-hover;
+}
+
+@media (max-width: 1200px) {
+	.close {
+		@apply right-4 top-4;
+
+		> svg {
+			@apply w-7 h-7;
+		}
+	}
+	.fill {
+		@apply relative pt-12;
+		max-height: 95%;
+	}
+	.arrow {
+		@apply absolute z-1;
+	}
+	.prev {
+		@apply left-2;
+	}
+	.next {
+		@apply right-2;
+	}
+}
+
+@media (max-width: 550px) {
+	.close {
+		@apply top-2 bg-white w-9 h-9 flex items-center justify-center rounded-full text-gray-900 right-2 black-shadow;
+
+		> svg {
+			width: 21px;
+			height: 21px;
+		}
+	}
+	.fill {
+		@apply pt-0;
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.arrow {
+		@apply min-w-9 min-h-9;
+
+		> svg {
+			width: 21px;
+			height: 21px;
+		}
+	}
+	.slide {
+		&::-webkit-scrollbar {
+			@apply w-1;
+		}
+	}
+}

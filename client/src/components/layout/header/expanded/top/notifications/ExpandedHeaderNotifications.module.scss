@@ -1,0 +1,123 @@
+.notifications {
+	@apply h-full;
+}
+.toggle {
+	@apply h-full relative px-3 flex items-center gap-1 cursor-pointer;
+
+	> svg {
+		@apply transition-all w-5 h-5;
+	}
+
+	&:hover {
+		.dropdown {
+			@apply animate-fade visible pointer-events-auto;
+		}
+
+		> svg {
+			@apply text-green-400;
+		}
+	}
+}
+.circle {
+	@apply w-fit h-fit min-w-3.5 min-h-3.5 flex items-center justify-center absolute right-0 -top-4 bottom-0 my-auto rounded-full aspect-square bg-green-400 text-white text-small font-nunito font-bold p-0.5;
+}
+.dropdown {
+	@apply right-0 bg-white;
+	transform: translateY(calc(100% - 1px));
+	min-width: 280px;
+	max-width: 280px;
+}
+.groups {
+	@apply w-full h-full overflow-y-auto overflow-x-hidden;
+	scrollbar-color: #14a800 #e0e0e0;
+	scrollbar-width: thin;
+	max-height: 270px;
+
+	&::-webkit-scrollbar {
+		@apply w-2 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply w-full bg-gray-300 rounded-lg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply w-full bg-green-base rounded-lg;
+	}
+}
+.heading {
+	@apply py-3 px-3 border-b border-gray-300 text-center text-medium-md font-nunito font-semibold;
+}
+.group {
+	&:not(:first-child) {
+		.heading {
+			@apply border-t;
+		}
+	}
+}
+.item {
+	@apply animate-fade flex;
+
+	&:hover {
+		@apply bg-gray-150/70 transition-colors;
+	}
+}
+.remove {
+	@apply px-2 green-hover transition-all;
+
+	> svg {
+		@apply w-5 h-5;
+		stroke-width: 1.8px;
+	}
+}
+.link {
+	@apply w-full py-3 px-3 rounded-sm flex items-center gap-2 overflow-hidden;
+}
+.avatar {
+	@apply image-like-bg-cover rounded-full;
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+}
+.content {
+	@apply w-full overflow-hidden flex flex-col items-start gap-1.5;
+}
+.date {
+	@apply text-small-lg text-gray-400 font-nunito;
+}
+.message {
+	@apply inline-block max-w-full text-medium-sm font-nunito overflow-hidden overflow-ellipsis whitespace-nowrap leading-md;
+
+	a {
+		@apply text-green-base;
+	}
+
+	&.green {
+		@apply text-green-base;
+	}
+	&.red {
+		@apply text-red-400;
+	}
+	&.orange {
+		@apply text-orange-400;
+	}
+	&.pink {
+		@apply text-pink-400;
+	}
+	&.blue {
+		@apply text-blue-400;
+	}
+}
+
+@media (max-width: 550px) {
+	.heading {
+		@apply text-medium-sm;
+	}
+}
+
+@media (max-width: 440px) {
+	.toggle {
+		@apply py-1.5 px-1;
+	}
+}
